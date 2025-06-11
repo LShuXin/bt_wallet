@@ -10,12 +10,16 @@ abstract class Contract extends Object implements Built<Contract, ContractBuilde
 
   /// The display name of the contract, typically used to identify the token or smart contract (e.g., “USDT” or “My NFT Contract”).
   String get name;
-  /// The blockchain address where the contract is deployed. This is a unique identifier on the chain (e.g., 0x123...).
+
+  /// The contract address where the contract is deployed. This is a unique identifier on the chain (e.g., 0x123...).
   String get address;
+
   /// The ABI (Application Binary Interface) of the contract, represented as a JSON string. It defines how to interact with the contract's functions.
   String get abi;
+
   /// The shorthand symbol for the token, often used in wallets or UIs (e.g., "ETH", "DAI").
   String? get symbol;
+
   /// The number of decimal places used by the token. It defines how balances are displayed (e.g., 18 for ETH-based tokens).
   int? get decimal;
 

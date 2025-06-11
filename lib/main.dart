@@ -1,16 +1,18 @@
 import 'dart:async';
 
+import 'package:bt_wallet_flutter_01/common/getx.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:sentry/sentry.dart';
 
 import 'package:bt_wallet_flutter_01/common/application.dart';
 import 'package:bt_wallet_flutter_01/common/theme/color.dart';
 import 'package:bt_wallet_flutter_01/common/theme/font.dart';
 import 'package:bt_wallet_flutter_01/router/routers.dart';
-import 'package:bt_wallet_flutter_01/views/splash_screen/splash_screen.dart';
+import 'package:bt_wallet_flutter_01/views/splash_screen/splash_screen_page.dart';
 
 // native crash support
 final SentryClient sentry = SentryClient(SentryOptions(dsn: 'https://cbc45c2b4f0f400797ca489f4f117699@o402661.ingest.sentry.io/5264109'));
@@ -29,6 +31,9 @@ Future<Future<SentryId>> _reportError(dynamic error, dynamic stackTrace) async {
 }
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Application.appName = (await PackageInfo.fromPlatform()).appName;
+  await initGlobalDependencies();
   FlutterError.onError = (FlutterErrorDetails details) async {
     if (isInDebugMode) {
       FlutterError.dumpErrorToConsole(details);
@@ -37,26 +42,18 @@ Future<void> main() async {
     }
   };
 
-  runApp(
-    const SplashScreen(
-      onInitializationComplete: runMainApp,
-    ),
-  );
-}
+  runApp(TWallet());
 
-void runMainApp(String initialRoute) {
-  runZonedGuarded(
-    () => runApp(TWallet(initialRoute: initialRoute)),
-    (error, stackTrace) async {
-      await _reportError(error, stackTrace);
-    },
-  );
+  // runZonedGuarded(
+  //   () => runApp(TWallet()),
+  //   (error, stackTrace) async {
+  //     await _reportError(error, stackTrace);
+  //   },
+  // );
 }
 
 class TWallet extends StatelessWidget {
-  final String initialRoute;
-
-  TWallet({super.key, required this.initialRoute}) {
+  TWallet({super.key}) {
     final router = FluroRouter();
     Routes.configureRoutes(router);
     Application.router = router;
@@ -83,7 +80,7 @@ class TWallet extends StatelessWidget {
           disabledColor: Colors.grey,
           fontFamily: 'PingFangHK',
         ),
-        initialRoute: initialRoute,
+        initialRoute: Routes.splashScreen,
         onGenerateRoute: Application.router.generator,
       ),
     );

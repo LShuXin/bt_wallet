@@ -1,16 +1,18 @@
 import 'dart:io';
 
 import 'package:fluro/fluro.dart';
+
 import 'package:bt_wallet_flutter_01/router/router_handler.dart';
 
 class Routes {
+  static const String splashScreen = "/";
   static const String home = "/home";
   static const String inputPin = "/input_pin";
-  static const String newWallet = "/new_wallet";
+  static const String newWallet = "/wallet_entry";
   static const String newIdentity = "/new_identity";
-  static const String backupMnemonics = "/backup_mnemonics";
-  static const String confirmMnemonics = "/confirm_mnemonics";
-  static const String restoreMnemonics = "/restore_mnemonics";
+  static const String createHDWallet = "/create_hd_wallet";
+  static const String confirmHDWallet = "/confirm_hd_wallet";
+  static const String restoreHDWallet = "/restore_hd_wallet";
   static const String profile = "/profile";
   static const String transferTwPoints = '/transfer_tw_points';
   static const String txList = "/tx_list";
@@ -37,33 +39,23 @@ class Routes {
 
   static final Map<String, Handler> routers = {
     home: homeHandler,
+    splashScreen: splashScreenPageHandler,
     inputPin: inputPinHandler,
-    newWallet: newWalletHandler,
+    newWallet: walletEntryPageHandler,
     newIdentity: newIdentityHandler,
-    backupMnemonics: backupMnemonicsHandler,
-    confirmMnemonics: confirmMnemonicsHandler,
-    restoreMnemonics: restoreMnemonicsHandler,
+    createHDWallet: createHDWalletPageHandler,
+    confirmHDWallet: confirmHDWalletPageHandler,
+    restoreHDWallet: restoreHDWalletHandler,
     profile: profileHandler,
     transferTwPoints: transferTwPointsHandler,
     txList: txListHandler,
     txListDetails: txListDetailsHandler,
     transferConfirm: transferConfirmHandler,
-    certificate: certificateHandler,
     qrPage: qrPageHandler,
     qrScanner: qrScannerHandler,
-    healthCode: healthCodeHandler,
-    healthCertPage: healthCertificationPageHandler,
-    identityDetail: identityDetailHandler,
     dapp: dappHandler,
-    ownVcPage: ownVcPageHandler,
-    composeVcPage: composeVcPageHandler,
-    passPage: passPageHandler,
-    applyVcPage: applyVcPageHandler,
-    verificationScenarioPage: verificationScenarioPageHandler,
-    verificationScenarioQrPage: verificationScenarioQrPageHandler,
-    newVcPage: newVcPageHandler,
     messagePage: messagePageHandler,
-    chatDetailPage: chatDetailPageHandler,
+    // chatDetailPage: chatDetailPageHandler,
   };
 
   static void configureRoutes(FluroRouter router) {

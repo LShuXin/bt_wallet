@@ -1,17 +1,17 @@
 import 'package:bip39/bip39.dart' as bip39;
 import 'package:get/get.dart';
 import 'package:mobx/mobx.dart';
-// import 'package:more/tuple.dart';
-import 'package:bt_wallet_flutter_01/common/secure_storage.dart';
-import 'package:bt_wallet_flutter_01/service/blockchain.dart';
 import 'package:tuple/tuple.dart';
+
+import 'package:bt_wallet_flutter_01/common/secure_storage.dart';
+import 'package:bt_wallet_flutter_01/service/blockchain_service.dart';
 
 part 'mnemonics.g.dart';
 
-typedef GenerateKeysCallback = Future<dynamic> Function(
-    int index, Tuple2<String, String> keys);
+typedef GenerateKeysCallback = Future<dynamic> Function(int index, Tuple2<String, String> keys);
 
 const saveSplitTag = '|';
+
 const identityStartIndex = 1;
 
 class MnemonicsStore extends MnemonicsBase with _$MnemonicsStore {
@@ -59,15 +59,15 @@ class MnemonicsStore extends MnemonicsBase with _$MnemonicsStore {
   }
 
   void brandNew({String? mnemonics}) {
-    //the index 0 is used to call save identities contract
+    // the index 0 is used to call save identities contract
     value = Tuple2(identityStartIndex, mnemonics ?? bip39.generateMnemonic());
     generateIndexZeroKeys(value.item2);
   }
 
   static Future<MnemonicsStore> init() async {
     Tuple2<int, String> value;
-    final SecureStorage _secureStorage = Get.find();
-    final String? saved = await _secureStorage.get(SecureStorageItem.mnemonics);
+    final SecureStorage secureStorage = Get.find<SecureStorage>();
+    final String? saved = await secureStorage.get(SecureStorageItem.mnemonics);
 
     if (null != saved) {
       final List<String> splits = saved.split(saveSplitTag);
@@ -88,6 +88,7 @@ class MnemonicsStore extends MnemonicsBase with _$MnemonicsStore {
 abstract class MnemonicsBase with Store {
   MnemonicsBase(this.value);
 
+  /// (index, mnemonic)
   @observable
   Tuple2<int, String> value;
 
@@ -102,8 +103,7 @@ abstract class MnemonicsBase with Store {
   @action
   Future<void> save({int newIndex = 0}) async {
     value = Tuple2(newIndex, value.item2);
-
-    final SecureStorage secureStorage = Get.find();
+    final SecureStorage secureStorage = Get.find<SecureStorage>();
     await secureStorage.set(
       SecureStorageItem.mnemonics,
       '$index$saveSplitTag$mnemonics',

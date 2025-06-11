@@ -1,56 +1,53 @@
-import 'package:fluro/fluro.dart';
+import 'package:bt_wallet_flutter_01/views/restore_hd_wallet/restore_hd_wallet.dart';
+import 'package:bt_wallet_flutter_01/views/splash_screen/splash_screen_page.dart';
 import 'package:flutter/material.dart';
+
+import 'package:fluro/fluro.dart';
 import 'package:optional/optional_internal.dart';
-import 'package:bt_wallet_flutter_01/views/backup_mnemonics/backup_mnemonics.dart';
-import 'package:bt_wallet_flutter_01/views/confirm_mnemonics/confirm_mnemonics.dart';
+
+import 'package:bt_wallet_flutter_01/views/create_hd_wallet/create_hd_wallet_page.dart';
+import 'package:bt_wallet_flutter_01/views/confirm_hd_wallet/confirm_hd_wallet.dart';
 import 'package:bt_wallet_flutter_01/views/dapp/dapp.dart';
-import 'package:bt_wallet_flutter_01/views/health_certificate/health_certificate.dart';
-import 'package:bt_wallet_flutter_01/views/health_code/health_code.dart';
-import 'package:bt_wallet_flutter_01/views/health_code/health_code_store.dart';
-import 'package:bt_wallet_flutter_01/views/home/discovery/health_certification_page.dart';
+import 'package:bt_wallet_flutter_01/views/home/my/chat.dart';
 import 'package:bt_wallet_flutter_01/views/home/home.dart';
 import 'package:bt_wallet_flutter_01/views/home/identity/identity_new_page.dart';
 import 'package:bt_wallet_flutter_01/views/home/my/message_page.dart';
-import 'package:bt_wallet_flutter_01/views/identity_detail/identity_detail.dart';
 import 'package:bt_wallet_flutter_01/views/identity_qr/identity_qr_code.dart';
-import 'package:bt_wallet_flutter_01/views/input_pin/input_pin_widget.dart';
-import 'package:bt_wallet_flutter_01/views/new_wallet/new_wallet_widget.dart';
+import 'package:bt_wallet_flutter_01/views/input_pin/input_pin_page.dart';
+import 'package:bt_wallet_flutter_01/views/wallet_entry/wallet_entry_page.dart';
 import 'package:bt_wallet_flutter_01/views/profile/profile.dart';
 import 'package:bt_wallet_flutter_01/views/qr_scanner/qr_scanner.dart';
-import 'package:bt_wallet_flutter_01/views/restore_mnemonics/restore_mnemonics.dart';
-import 'package:bt_wallet_flutter_01/views/ssi/apply_vc_page.dart';
-import 'package:bt_wallet_flutter_01/views/ssi/compose_vc_page.dart';
-import 'package:bt_wallet_flutter_01/views/ssi/new_vc_page.dart';
-import 'package:bt_wallet_flutter_01/views/ssi/own_vc_page.dart';
-import 'package:bt_wallet_flutter_01/views/ssi/pass_page.dart';
-import 'package:bt_wallet_flutter_01/views/ssi/verification_scenario_page.dart';
-import 'package:bt_wallet_flutter_01/views/ssi/verification_scenario_qr_page.dart';
+import 'package:bt_wallet_flutter_01/views/restore_hd_wallet/restore_hd_wallet.dart';
 import 'package:bt_wallet_flutter_01/views/transfer/transfer.dart';
 import 'package:bt_wallet_flutter_01/views/transfer_confirm/transfer_confirm.dart';
 import 'package:bt_wallet_flutter_01/views/tx_list/tx_list_details_page.dart';
 import 'package:bt_wallet_flutter_01/views/tx_list/tx_list_page.dart';
 
-import '../views/home/my/chat.dart';
-
-Handler newWalletHandler = Handler(
+Handler splashScreenPageHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    return NewWalletWidget();
+    return SplashScreenPage();
+  },
+);
+
+Handler walletEntryPageHandler = Handler(
+  handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+    return WalletEntryPage();
   },
 );
 
 Handler newIdentityHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    return IdentityNewPage();
+    return NewIdentityPage();
   },
 );
 
 Handler homeHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
     return Home(
-      defaultIndex: int.parse(
-        Optional.ofNullable(params['index'])
-            .map((indexes) => indexes.first)
-            .orElse('0'),
+      defaultIndex: int
+        .parse(Optional.ofNullable(params['index'])
+        .map((indexes) => indexes.first)
+        .orElse('0'),
       ),
     );
   },
@@ -58,19 +55,19 @@ Handler homeHandler = Handler(
 
 Handler inputPinHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    return PinInputWidget();
+    return PinInputPage();
   },
 );
 
-Handler backupMnemonicsHandler = Handler(
+Handler createHDWalletPageHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    return BackupMnemonicsPage();
+    return CreateHDWalletPage();
   },
 );
 
-Handler confirmMnemonicsHandler = Handler(
+Handler confirmHDWalletPageHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    return ConfirmMnemonicsPage();
+    return ConfirmHDWalletPage();
   },
 );
 
@@ -112,13 +109,6 @@ Handler transferConfirmHandler = Handler(
   },
 );
 
-Handler certificateHandler = Handler(
-  handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    final String id = params['id']!.first;
-    return HealthCertificatePage(id: id);
-  },
-);
-
 Handler qrPageHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
     return IdentityQRPage();
@@ -131,47 +121,20 @@ Handler qrScannerHandler = Handler(
   },
 );
 
-Handler healthCodeHandler = Handler(
-  handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    return HealthCodePage(
-      params['id']!.first,
-      Optional.ofNullable(params['firstRefresh'])
-          .flatMap((v) => Optional.ofNullable(v[0]))
-          .map((v) {
-        if (v.toLowerCase() == 'true') {
-          return FirstRefreshState.enabled;
-        } else {
-          return FirstRefreshState.disabled;
-        }
-      }).orElse(FirstRefreshState.enabled),
-    );
-  },
-);
-
-Handler healthCertificationPageHandler = Handler(
-  handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    return HealthCertificationPage();
-  },
-);
-
 Handler messagePageHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
     return const MessagePage();
   },
 );
-Handler chatDetailPageHandler = Handler(
-  handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    // return const ChatPage(
-    //   username: '',
-    // );
-  },
-);
 
-Handler identityDetailHandler = Handler(
-  handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    return IdentityDetailPage(id: params['id']!.first);
-  },
-);
+// Handler chatDetailPageHandler = Handler(
+//   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+//     return const ChatPage(
+//       room: ,
+//     );
+//   },
+// );
+
 
 Handler dappHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
@@ -179,51 +142,8 @@ Handler dappHandler = Handler(
   },
 );
 
-Handler restoreMnemonicsHandler = Handler(
+Handler restoreHDWalletHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    return RestoreMnemonicsPage();
-  },
-);
-
-Handler ownVcPageHandler = Handler(
-  handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    return OwnVcPage();
-  },
-);
-
-Handler composeVcPageHandler = Handler(
-  handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    return ComposeVcPage();
-  },
-);
-
-Handler passPageHandler = Handler(
-  handlerFunc: (BuildContext? context, Map<String, List<String>> parms) {
-    return PassPage();
-  },
-);
-
-Handler applyVcPageHandler = Handler(
-  handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    return ApplyVcPage();
-  },
-);
-
-Handler verificationScenarioPageHandler = Handler(
-  handlerFunc: (BuildContext? context, Map<String, List<String>> parms) {
-    return VerificationScenarioPage();
-  },
-);
-
-Handler verificationScenarioQrPageHandler = Handler(
-  handlerFunc: (BuildContext? context, Map<String, List<String>> parms) {
-    final name = context!.settings!.arguments as String;
-    return VerificationScenarioQrPage(name: name);
-  },
-);
-
-Handler newVcPageHandler = Handler(
-  handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-    return NewVcPage();
+    return RestoreHDWalletPage();
   },
 );

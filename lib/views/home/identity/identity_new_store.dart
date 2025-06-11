@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:mobx/mobx.dart';
-import 'package:bt_wallet_flutter_01/common/util.dart';
+import 'package:bt_wallet_flutter_01/common/util/format.dart';
 import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
 import 'package:bt_wallet_flutter_01/store/identity_store.dart';
 import 'package:bt_wallet_flutter_01/store/mnemonics.dart';
@@ -10,9 +10,9 @@ import 'package:validators/validators.dart';
 
 part 'identity_new_store.g.dart';
 
-class IdentityNewStore = _IdentityNewStore with _$IdentityNewStore;
+class NewIdentityStoreStore = _NewIdentityStoreStore with _$NewIdentityStoreStore;
 
-abstract class _IdentityNewStore with Store {
+abstract class _NewIdentityStoreStore with Store {
   final FormErrorState error = FormErrorState();
   final IdentityStore _identityStore = Get.find();
 

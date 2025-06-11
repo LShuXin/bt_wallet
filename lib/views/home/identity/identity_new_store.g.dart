@@ -8,9 +8,9 @@ part of 'identity_new_store.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
-mixin _$IdentityNewStore on _IdentityNewStore, Store {
+mixin _$NewIdentityStoreStore on _NewIdentityStoreStore, Store {
   late final _$nameAtom =
-      Atom(name: '_IdentityNewStore.name', context: context);
+      Atom(name: '_NewIdentityStoreStore.name', context: context);
 
   @override
   String get name {
@@ -26,7 +26,7 @@ mixin _$IdentityNewStore on _IdentityNewStore, Store {
   }
 
   late final _$phoneAtom =
-      Atom(name: '_IdentityNewStore.phone', context: context);
+      Atom(name: '_NewIdentityStoreStore.phone', context: context);
 
   @override
   String get phone {
@@ -42,7 +42,7 @@ mixin _$IdentityNewStore on _IdentityNewStore, Store {
   }
 
   late final _$emailAtom =
-      Atom(name: '_IdentityNewStore.email', context: context);
+      Atom(name: '_NewIdentityStoreStore.email', context: context);
 
   @override
   String get email {
@@ -58,7 +58,7 @@ mixin _$IdentityNewStore on _IdentityNewStore, Store {
   }
 
   late final _$birthdayAtom =
-      Atom(name: '_IdentityNewStore.birthday', context: context);
+      Atom(name: '_NewIdentityStoreStore.birthday', context: context);
 
   @override
   String get birthday {
@@ -74,68 +74,68 @@ mixin _$IdentityNewStore on _IdentityNewStore, Store {
   }
 
   late final _$addIdentityAsyncAction =
-      AsyncAction('_IdentityNewStore.addIdentity', context: context);
+      AsyncAction('_NewIdentityStoreStore.addIdentity', context: context);
 
   @override
   Future<dynamic> addIdentity() {
     return _$addIdentityAsyncAction.run(() => super.addIdentity());
   }
 
-  late final _$_IdentityNewStoreActionController =
-      ActionController(name: '_IdentityNewStore', context: context);
+  late final _$_NewIdentityStoreStoreActionController =
+      ActionController(name: '_NewIdentityStoreStore', context: context);
 
   @override
   void clearError() {
-    final _$actionInfo = _$_IdentityNewStoreActionController.startAction(
-        name: '_IdentityNewStore.clearError');
+    final _$actionInfo = _$_NewIdentityStoreStoreActionController.startAction(
+        name: '_NewIdentityStoreStore.clearError');
     try {
       return super.clearError();
     } finally {
-      _$_IdentityNewStoreActionController.endAction(_$actionInfo);
+      _$_NewIdentityStoreStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   void resetNameError(String value) {
-    final _$actionInfo = _$_IdentityNewStoreActionController.startAction(
-        name: '_IdentityNewStore.resetNameError');
+    final _$actionInfo = _$_NewIdentityStoreStoreActionController.startAction(
+        name: '_NewIdentityStoreStore.resetNameError');
     try {
       return super.resetNameError(value);
     } finally {
-      _$_IdentityNewStoreActionController.endAction(_$actionInfo);
+      _$_NewIdentityStoreStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   void resetPhoneError(String value) {
-    final _$actionInfo = _$_IdentityNewStoreActionController.startAction(
-        name: '_IdentityNewStore.resetPhoneError');
+    final _$actionInfo = _$_NewIdentityStoreStoreActionController.startAction(
+        name: '_NewIdentityStoreStore.resetPhoneError');
     try {
       return super.resetPhoneError(value);
     } finally {
-      _$_IdentityNewStoreActionController.endAction(_$actionInfo);
+      _$_NewIdentityStoreStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   void resetEmailError(String value) {
-    final _$actionInfo = _$_IdentityNewStoreActionController.startAction(
-        name: '_IdentityNewStore.resetEmailError');
+    final _$actionInfo = _$_NewIdentityStoreStoreActionController.startAction(
+        name: '_NewIdentityStoreStore.resetEmailError');
     try {
       return super.resetEmailError(value);
     } finally {
-      _$_IdentityNewStoreActionController.endAction(_$actionInfo);
+      _$_NewIdentityStoreStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   void resetBirthdayError(String value) {
-    final _$actionInfo = _$_IdentityNewStoreActionController.startAction(
-        name: '_IdentityNewStore.resetBirthdayError');
+    final _$actionInfo = _$_NewIdentityStoreStoreActionController.startAction(
+        name: '_NewIdentityStoreStore.resetBirthdayError');
     try {
       return super.resetBirthdayError(value);
     } finally {
-      _$_IdentityNewStoreActionController.endAction(_$actionInfo);
+      _$_NewIdentityStoreStoreActionController.endAction(_$actionInfo);
     }
   }
 

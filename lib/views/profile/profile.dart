@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:bt_wallet_flutter_01/common/application.dart';
 import 'package:bt_wallet_flutter_01/common/theme/color.dart';
 import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
 import 'package:bt_wallet_flutter_01/router/routers.dart';
-import 'package:bt_wallet_flutter_01/store/health_certification_store.dart';
 import 'package:bt_wallet_flutter_01/store/identity_store.dart';
 import 'package:bt_wallet_flutter_01/views/profile/widgets/profile_row.dart';
 import 'package:bt_wallet_flutter_01/widgets/avatar.dart';
@@ -16,25 +14,12 @@ import 'package:bt_wallet_flutter_01/widgets/layouts/common_layout.dart';
 class ProfilePage extends StatelessWidget {
   final String id;
   final IdentityStore identityStore = Get.find();
-  final HealthCertificationStore certStore = Get.find();
 
-  ProfilePage({required this.id});
-
-  String certTitle() {
-    return certStore.isBoundCert ? '健康码' : '健康认证';
-  }
-
-  void onHealthBtnTap(BuildContext context) {
-    final String path = certStore.isBoundCert
-        ? '${Routes.healthCode}?id=$id'
-        : '${Routes.certificate}?id=$id';
-    Application.router.navigateTo(context, path);
-  }
+  ProfilePage({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {
     final DecentralizedIdentity? identity = identityStore.getIdentityById(id);
-    certStore.fetchHealthCertByDID(identity!.did.toString());
 
     return CommonLayout(
       title: '个人信息',
@@ -60,33 +45,33 @@ class ProfilePage extends StatelessWidget {
                   ProfileRowWidget(
                     assetIcon: 'assets/icons/name.svg',
                     name: '名称*',
-                    value: identity.profileInfo.name,
+                    value: identity?.profileInfo.name,
                   ),
                   ProfileRowWidget(
                     assetIcon: 'assets/icons/email.svg',
                     name: '邮箱',
-                    value: identity.profileInfo.email,
+                    value: identity?.profileInfo.email,
                   ),
                   ProfileRowWidget(
                     assetIcon: 'assets/icons/phone.svg',
                     name: '电话',
-                    value: identity.profileInfo.phone,
+                    value: identity?.profileInfo.phone,
                   ),
                   ProfileRowWidget(
                     assetIcon: 'assets/icons/birth.svg',
                     name: '生日',
-                    value: identity.profileInfo.birthday ?? '',
+                    value: identity?.profileInfo.birthday ?? '',
                   ),
                   GestureDetector(
                     onLongPress: () async {
                       return Clipboard.setData(
-                        ClipboardData(text: identity.did.toString()),
+                        ClipboardData(text: identity?.did.toString() ?? ''),
                       ).then((_) => showDialogSimple(DialogType.none, '复制成功'));
                     },
                     child: ProfileRowWidget(
                       assetIcon: 'assets/icons/eye.svg',
                       name: 'DID',
-                      value: identity.did.toString(),
+                      value: identity?.did.toString(),
                     ),
                   ),
                   ProfileRowWidget(
@@ -104,7 +89,7 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildQR(BuildContext context, DecentralizedIdentity id) {
+  Widget _buildQR(BuildContext context, DecentralizedIdentity? id) {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () => Navigator.pushNamed(context, Routes.qrPage, arguments: id),

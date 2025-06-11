@@ -16,11 +16,14 @@ class WalletTheme {
       double height = 45,
       Color? outlineColor}) {
     final ElevatedButton raisedButton = ElevatedButton(
-      // color: WalletColor.primary,
-      // disabledColor: WalletColor.middleGrey,
-      // elevation: 0,
+      style: ButtonStyle(
+        elevation: WidgetStatePropertyAll(0),
+        backgroundColor: WidgetStatePropertyAll(
+          null == onPressed ? WalletColor.middleGrey : WalletColor.primary,
+        ),
+        shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)))
+      ),
       onPressed: onPressed,
-      // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
       child: Center(
         child: Text(
           text!,
@@ -31,13 +34,16 @@ class WalletTheme {
       ),
     );
     final OutlinedButton outlineButton = OutlinedButton(
-      // textColor: outlineColor ?? WalletColor.primary,
-      // disabledTextColor: WalletColor.middleGrey,
+      style: ButtonStyle(
+        shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),),
+        textStyle: WidgetStatePropertyAll(TextStyle().copyWith(
+          color: null == onPressed ? WalletColor.middleGrey : (outlineColor ?? WalletColor.primary),
+        )),
+      ),
       // disabledBorderColor: WalletColor.middleGrey,
       // borderSide: BorderSide(color: outlineColor ?? WalletColor.primary),
       // highlightedBorderColor: outlineColor ?? WalletColor.primary,
       onPressed: onPressed,
-      // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
       child: Center(
         child: Text(
           text,

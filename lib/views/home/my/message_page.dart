@@ -13,7 +13,7 @@ import 'package:bt_wallet_flutter_01/views/home/my/users.dart';
 import 'package:bt_wallet_flutter_01/widgets/layouts/common_layout.dart';
 
 import '../../../router/routers.dart';
-import '../../../service/firbaseService.dart';
+import '../../../service/firbase_service.dart';
 
 class MessagePage extends StatefulWidget {
   const MessagePage();

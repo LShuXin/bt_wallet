@@ -6,7 +6,7 @@ import 'package:bt_wallet_flutter_01/common/theme/color.dart';
 import 'package:bt_wallet_flutter_01/common/theme/font.dart';
 import 'package:bt_wallet_flutter_01/common/theme/index.dart';
 import 'package:bt_wallet_flutter_01/models/webview/pincode_dialog/pincode_dialog_style.dart';
-import 'package:bt_wallet_flutter_01/service/pincode.dart';
+import 'package:bt_wallet_flutter_01/service/pin_code_service.dart';
 import 'package:bt_wallet_flutter_01/views/transfer_confirm/widgets/input_pin.dart';
 
 class PinDialogWidget extends StatelessWidget {
@@ -25,7 +25,7 @@ class PinDialogWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           GestureDetector(
-            onTap: () => PincodeService.dismissPincodeDialog(),
+            onTap: () => PinCodeService.dismissPinCodeDialog(),
             child: Align(
               alignment: Alignment.centerRight,
               child: SvgPicture.asset(

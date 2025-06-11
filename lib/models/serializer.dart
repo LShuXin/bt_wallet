@@ -2,12 +2,11 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart';
+
 import 'package:bt_wallet_flutter_01/models/amount.dart';
 import 'package:bt_wallet_flutter_01/models/api_response.dart';
 import 'package:bt_wallet_flutter_01/models/contract.dart';
 import 'package:bt_wallet_flutter_01/models/dcep/dcep.dart';
-import 'package:bt_wallet_flutter_01/models/health_certification.dart';
-import 'package:bt_wallet_flutter_01/models/health_certification_token.dart';
 import 'package:bt_wallet_flutter_01/models/identity/account_info.dart';
 import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
 import 'package:bt_wallet_flutter_01/models/identity/health_info.dart';
@@ -33,7 +32,6 @@ import 'package:bt_wallet_flutter_01/models/webview/sign_transaction/transaction
 import 'package:bt_wallet_flutter_01/models/webview/webview_request.dart';
 import 'package:bt_wallet_flutter_01/models/webview/webview_request_method.dart';
 import 'package:bt_wallet_flutter_01/views/ble_payment/common/command.dart';
-import 'package:bt_wallet_flutter_01/views/health_certificate/health_certificate_page_store.dart';
 
 part 'serializer.g.dart';
 
@@ -47,11 +45,6 @@ part 'serializer.g.dart';
   Transaction,
   TwBalance,
   TxStatus,
-  HealthCertification,
-  HealthCertificationSub,
-  HealthCertificationToken,
-  HealthyStatus,
-  SelectOption,
   WebviewRequest,
   WebviewRequestMethod,
   WebviewParameter,
@@ -109,9 +102,6 @@ final Serializers serializers = (_$serializers.toBuilder()
           () => ApiResponseBuilder<BuiltList<Transaction>>())
       ..addBuilderFactory(const FullType(ApiResponse, [FullType(TwBalance)]),
           () => ApiResponseBuilder<TwBalance>())
-      ..addBuilderFactory(
-          const FullType(ApiResponse, [FullType(HealthCertificationToken)]),
-          () => ApiResponseBuilder<HealthCertificationToken>())
       ..addBuilderFactory(
           const FullType(WebviewRequest), () => WebviewRequestBuilder())
       ..addBuilderFactory(

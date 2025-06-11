@@ -9,12 +9,16 @@ part 'account_info.g.dart';
 abstract class AccountInfo implements Built<AccountInfo, AccountInfoBuilder> {
   static Serializer<AccountInfo> get serializer => _$accountInfoSerializer;
 
+  /// Account index, possibly the HD wallet account number
   int get index;
 
+  /// The public key of the account
   String get pubKey;
 
+  /// The private key (should be handled carefully for security!)
   String get priKey;
 
+  /// Nullable balance object that likely holds value info
   Amount? get balance;
 
   static AccountInfo fromJson(dynamic serialized) {

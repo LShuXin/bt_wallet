@@ -77,12 +77,11 @@ class _PointTabState extends State<PointTab> {
   Widget build(BuildContext context) => Observer(
         builder: (_) {
           Optional<Amount> amount;
-          final ObservableFuture<TwBalance> future =
-              _identityStore.fetchBalanceFutureStream.value!;
+          final ObservableFuture<TwBalance?> future = _identityStore.fetchBalanceFutureStream.value!;
 
           switch (future.status) {
             case FutureStatus.fulfilled:
-              amount = Optional.ofNullable(future.result as TwBalance)
+              amount = Optional.ofNullable(future.result as TwBalance?)
                   .map((balance) => balance.amount);
               break;
             case FutureStatus.pending:

@@ -1,15 +1,20 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import 'package:bip39/bip39.dart' as bip39;
 import 'package:built_value/serializer.dart';
 import 'package:crypto/crypto.dart';
 import 'package:encrypt/encrypt.dart' as encrypt_tool;
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart';
-// import 'package:more/tuple.dart';
 import 'package:optional/optional.dart';
+import 'package:tuple/tuple.dart';
+import 'package:web3dart/crypto.dart';
+import 'package:web3dart/web3dart.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+
 import 'package:bt_wallet_flutter_01/common/application.dart';
 import 'package:bt_wallet_flutter_01/common/device_info.dart';
 import 'package:bt_wallet_flutter_01/common/secure_storage.dart';
@@ -24,14 +29,10 @@ import 'package:bt_wallet_flutter_01/models/webview/sign_transaction/sign_transa
 import 'package:bt_wallet_flutter_01/models/webview/webview_request_method.dart';
 import 'package:bt_wallet_flutter_01/router/routers.dart';
 import 'package:bt_wallet_flutter_01/service/api_provider.dart';
-import 'package:bt_wallet_flutter_01/service/pincode.dart';
+import 'package:bt_wallet_flutter_01/service/pin_code_service.dart';
 import 'package:bt_wallet_flutter_01/store/identity_store.dart';
 import 'package:bt_wallet_flutter_01/store/mnemonics.dart';
 import 'package:bt_wallet_flutter_01/views/dapp/dapp.dart';
-import 'package:tuple/tuple.dart';
-import 'package:web3dart/crypto.dart';
-import 'package:web3dart/web3dart.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 typedef OperatorFunction = void Function(String id, String param);
 
@@ -84,7 +85,7 @@ class DAppService {
     try {
       final WebviewSignTransaction _signTransaction =
           WebviewSignTransaction.fromJson(json.decode(param));
-      final pincodeValidate = await PincodeService.validate(
+      final pincodeValidate = await PinCodeService.validate(
         _signTransaction.token ?? '',
         _signTransaction.pincodeDialogStyle,
       );
@@ -151,7 +152,9 @@ class DAppService {
           ).result.hash,
         ),
       );
-    }).catchError(() => reject(id, false));
+    }).catchError((_) async {
+      reject(id, false);
+    });
   }
 
   static Future<void> qrCode(String id, _) async {
@@ -164,8 +167,7 @@ class DAppService {
   }
 
   static void peekAccount(String id, _) {
-    final Tuple3<int, String, String> keyPair =
-        Get.find<MnemonicsStore>().peekKeys();
+    final Tuple3<int, String, String> keyPair = Get.find<MnemonicsStore>().peekKeys();
     final DecentralizedIdentity identity = DecentralizedIdentity(
       (builder) => builder
         ..profileInfo.name = id
@@ -177,34 +179,27 @@ class DAppService {
   }
 
   static void createAccount(String id, String param) {
-    final CreateAccountParam createAccountParam =
-        CreateAccountParam.fromJson(json.decode(param));
-    final MnemonicsStore _mnemonicsStore = Get.find<MnemonicsStore>();
-    _mnemonicsStore.generateKeys(
-      (index, keys) => Future.value(
-        DecentralizedIdentity(
-          (identity) => identity
-            ..profileInfo.name =
-                DateTime.now().millisecondsSinceEpoch.toString()
-            ..accountInfo.pubKey = keys.item1
-            ..accountInfo.priKey = keys.item2
-            ..dappId = dappid
-            ..extra = createAccountParam.extra
-            ..accountInfo.index = index,
-        ),
-      ).then(
-        (identity) => identity.register().then((success) {
-          if (success) {
-            resolve(id, identity.basicInfo());
-          }
-        }),
+    final CreateAccountParam createAccountParam = CreateAccountParam.fromJson(json.decode(param));
+    final MnemonicsStore mnemonicsStore = Get.find<MnemonicsStore>();
+    mnemonicsStore.generateKeys((index, keys) => Future.value(
+      DecentralizedIdentity((identity) => identity
+        ..profileInfo.name = DateTime.now().millisecondsSinceEpoch.toString()
+        ..accountInfo.pubKey = keys.item1
+        ..accountInfo.priKey = keys.item2
+        ..dappId = dappid
+        ..extra = createAccountParam.extra
+        ..accountInfo.index = index,
       ),
-    );
+    ).then((identity) => identity.register().then((success) {
+      if (success) {
+        resolve(id, identity.basicInfo());
+      }
+    }),),);
   }
 
   static void getRootKey(String id, _) {
-    final MnemonicsStore _mnemonicsStore = Get.find<MnemonicsStore>();
-    final walletSeed = bip39.mnemonicToSeed(_mnemonicsStore.mnemonics);
+    final MnemonicsStore mnemonicsStore = Get.find<MnemonicsStore>();
+    final walletSeed = bip39.mnemonicToSeed(mnemonicsStore.mnemonics);
     resolve(id, sha256.convert(walletSeed).toString());
   }
 
@@ -217,8 +212,7 @@ class DAppService {
 
   static void setStatusBarBackgroundColor(String id, String param) {
     if (DeviceInfo.isIOS()) {
-      return dappPageStateInstance
-          .changeBackgroundColor(WalletTheme.rgbColor(param));
+      return dappPageStateInstance.changeBackgroundColor(WalletTheme.rgbColor(param));
     }
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
@@ -234,10 +228,10 @@ class DAppService {
       resolve(
         id,
         Get.find<IdentityStore>()
-            .identitiesWithDapp
-            .where((identity) => identity.dappId == dappid)
-            .map((identity) => identity.basicInfo())
-            .toList(),
+          .identitiesWithDapp
+          .where((identity) => identity.dappId == dappid)
+          .map((identity) => identity.basicInfo())
+          .toList(),
       );
     }
   }
@@ -255,10 +249,10 @@ class DAppService {
       return resolve(id, []);
     }
 
-    final IdentityStore _identityStore = Get.find<IdentityStore>();
+    final IdentityStore identityStore = Get.find<IdentityStore>();
     final List<Map> result = [];
     param.split(',').forEach((accountId) {
-      final identity = _identityStore.getIdentityById(accountId);
+      final identity = identityStore.getIdentityById(accountId);
       result.add({
         'id': identity?.id,
         'address': identity?.address,
@@ -271,16 +265,14 @@ class DAppService {
 
   static Future<void> validatePin(String id, String pin) async {
     final iv = encrypt_tool.IV.fromUtf8('${pin}0123456789');
-    final encrypt_tool.Key aesKey =
-        encrypt_tool.Key.fromUtf8('${pin}abcdefghijklmnopqrstuvwxyz');
+    final encrypt_tool.Key aesKey = encrypt_tool.Key.fromUtf8('${pin}abcdefghijklmnopqrstuvwxyz');
     final encrypt = encrypt_tool.Encrypter(
       encrypt_tool.AES(aesKey, mode: encrypt_tool.AESMode.cbc),
     );
-    final SecureStorage _secureStorage = Get.find();
-    final String? encryptedString =
-        await _secureStorage.get(SecureStorageItem.masterKey);
+    final SecureStorage secureStorage = Get.find<SecureStorage>();
+    final String? encryptedString = await secureStorage.get(SecureStorageItem.masterKey);
     final encrypt_tool.Encrypted encryptedKey =
-        encrypt_tool.Encrypted.fromBase64(encryptedString ?? '');
+      encrypt_tool.Encrypted.fromBase64(encryptedString ?? '');
     try {
       encrypt.decrypt(encryptedKey, iv: iv);
       resolve(id, true);
@@ -296,9 +288,8 @@ class DAppService {
   }
 
   static void reject(String id, dynamic data) {
-    webviewController
-        // ignore: avoid_escaping_inner_quotes
-        .runJavaScript(
+    // ignore: avoid_escaping_inner_quotes
+    webviewController.runJavaScript(
       'window.TWallet.rejectPromise("$id", ${json.encode(json.encode(data))});',
     );
   }

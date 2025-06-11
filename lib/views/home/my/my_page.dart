@@ -10,11 +10,10 @@ import 'package:bt_wallet_flutter_01/common/secure_storage.dart';
 import 'package:bt_wallet_flutter_01/common/theme/color.dart';
 import 'package:bt_wallet_flutter_01/common/theme/font.dart';
 import 'package:bt_wallet_flutter_01/router/routers.dart';
-import 'package:bt_wallet_flutter_01/service/progress_dialog.dart';
-import 'package:bt_wallet_flutter_01/store/dcep/dcep_store.dart';
-import 'package:bt_wallet_flutter_01/store/health_certification_store.dart';
+import 'package:bt_wallet_flutter_01/common/util/progress_dialog.dart';
+import 'package:bt_wallet_flutter_01/store/dcep_store.dart';
 import 'package:bt_wallet_flutter_01/store/identity_store.dart';
-import 'package:bt_wallet_flutter_01/views/backup_mnemonics/widgets/tips.dart';
+import 'package:bt_wallet_flutter_01/views/create_hd_wallet/widgets/tips.dart';
 import 'package:bt_wallet_flutter_01/views/ble_payment/home.dart';
 import 'package:bt_wallet_flutter_01/views/home/home_store.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
@@ -31,7 +30,6 @@ Future<void> _cleanPrivateData(BuildContext context) async {
   return Get.find<IdentityStore>()
       .clear()
       .then((_) => Get.find<DcepStore>().clear())
-      .then((_) => Get.find<HealthCertificationStore>().clear())
       .then((_) => Get.find<SecureStorage>().clearAll())
       .then((_) => clearAllDappStorage(FlutterWebviewPlugin()))
       .then(

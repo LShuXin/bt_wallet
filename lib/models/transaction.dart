@@ -1,5 +1,6 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+
 import 'package:bt_wallet_flutter_01/models/amount.dart';
 import 'package:bt_wallet_flutter_01/models/serializer.dart';
 import 'package:bt_wallet_flutter_01/models/tx_status.dart';
@@ -7,10 +8,12 @@ import 'package:bt_wallet_flutter_01/models/tx_status.dart';
 part 'transaction.g.dart';
 
 abstract class Transaction extends Object
-    implements Built<Transaction, TransactionBuilder> {
+  implements Built<Transaction, TransactionBuilder> {
+
   static Serializer<Transaction> get serializer => _$transactionSerializer;
 
   String get hash;
+
   Amount get amount;
 
   @BuiltValueField(wireName: 'create_time')
@@ -39,11 +42,13 @@ abstract class Transaction extends Object
   }
 
   factory Transaction([void Function(TransactionBuilder) updates]) =
-      _$Transaction;
+    _$Transaction;
 
   factory Transaction.fromJson(dynamic serialized) {
-    return serializers.deserialize(serialized,
-        specifiedType: const FullType(Transaction)) as Transaction;
+    return serializers.deserialize(
+      serialized,
+      specifiedType: const FullType(Transaction),
+    ) as Transaction;
   }
 
   Transaction._();

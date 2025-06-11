@@ -5,9 +5,10 @@ import 'package:bt_wallet_flutter_01/models/serializer.dart';
 part 'send_transaction_response.g.dart';
 
 abstract class SendTransactionResponse extends Object
-    implements Built<SendTransactionResponse, SendTransactionResponseBuilder> {
+  implements Built<SendTransactionResponse, SendTransactionResponseBuilder> {
+
   static Serializer<SendTransactionResponse> get serializer =>
-      _$sendTransactionResponseSerializer;
+    _$sendTransactionResponseSerializer;
 
   String get hash;
 
@@ -15,14 +16,14 @@ abstract class SendTransactionResponse extends Object
     return serializers.serialize(this) as Map<String, dynamic>;
   }
 
-  factory SendTransactionResponse(
-          [void Function(SendTransactionResponseBuilder) updates]) =
-      _$SendTransactionResponse;
+  factory SendTransactionResponse([void Function(SendTransactionResponseBuilder) updates]) =
+    _$SendTransactionResponse;
 
   factory SendTransactionResponse.fromJson(dynamic serialized) {
-    return serializers.deserialize(serialized,
-            specifiedType: const FullType(SendTransactionResponse))
-        as SendTransactionResponse;
+    return serializers.deserialize(
+      serialized,
+      specifiedType: const FullType(SendTransactionResponse),
+    ) as SendTransactionResponse;
   }
 
   SendTransactionResponse._();

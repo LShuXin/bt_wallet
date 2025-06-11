@@ -1,18 +1,17 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:json_store/json_store.dart';
 import 'package:mobx/mobx.dart';
-// import 'package:more/tuple.dart';
 import 'package:optional/optional_internal.dart';
+import 'package:tuple/tuple.dart';
+import 'package:uuid/uuid.dart';
+
 import 'package:bt_wallet_flutter_01/models/amount.dart';
 import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
 import 'package:bt_wallet_flutter_01/models/tw_balance.dart';
-import 'package:bt_wallet_flutter_01/service/contract.dart';
+import 'package:bt_wallet_flutter_01/service/contract_service.dart';
 import 'package:bt_wallet_flutter_01/store/mnemonics.dart';
-import 'package:tuple/tuple.dart';
-import 'package:uuid/uuid.dart';
 
 part 'identity_store.g.dart';
 
@@ -24,18 +23,15 @@ const didHealthCertSelectIndexKey = 'did_health_cert_select_index';
 enum AssetsType { point, token }
 
 class IdentityStore extends IdentityStoreBase with _$IdentityStore {
-  IdentityStore(ObservableList<DecentralizedIdentity> identities,
-      int didHealthSelectIndex, String lastSelectedIdentityId)
-      : super(identities, didHealthSelectIndex, lastSelectedIdentityId);
+  IdentityStore(super.identities, super.didHealthSelectIndex, super.lastSelectedIdentityId);
 
   static Future<IdentityStore> init() async {
-    final int didHealthSelectIndex = await IdentityStoreBase._db
-        .getItem(didHealthCertSelectIndexKey)
-        .then((savedItem) {
-      return savedItem != null
+    final int didHealthSelectIndex = await IdentityStoreBase._db.getItem(didHealthCertSelectIndexKey)
+      .then((savedItem) {
+        return savedItem != null
           ? savedItem[didHealthCertSelectIndexKey] as int
           : 0;
-    });
+      });
 
     final List<DecentralizedIdentity> identities = Optional.ofNullable(
       await IdentityStoreBase._db.getListLike('$identityNameKey: %'),
@@ -76,7 +72,7 @@ abstract class IdentityStoreBase with Store {
     _streamController = StreamController();
     _selectStreamController = StreamController();
 
-    fetchBalanceFutureStream = ObservableStream(
+    fetchBalanceFutureStream = ObservableStream<ObservableFuture<TwBalance?>>(
       _streamController.stream,
       initialValue: ObservableFuture(Future.value()),
     );
@@ -117,7 +113,7 @@ abstract class IdentityStoreBase with Store {
 
   late StreamController<ObservableFuture<TwBalance>> _streamController;
 
-  late ObservableStream<ObservableFuture<TwBalance>> fetchBalanceFutureStream;
+  late ObservableStream<ObservableFuture<TwBalance?>> fetchBalanceFutureStream;
 
   late StreamController<DecentralizedIdentity> _selectStreamController;
   late ObservableStream<DecentralizedIdentity> selectedIdentityStream;

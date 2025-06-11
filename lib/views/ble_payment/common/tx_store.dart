@@ -41,44 +41,48 @@ class OfflineTxStore {
   }
 
   static Future<OfflineTxStore> init() async {
-    final Queue<TxReceive> _txQueue = Queue();
+    final Queue<TxReceive> txQueue = Queue();
     final ReceivePort receivePort = ReceivePort();
-    final Connectivity _connectivity = Connectivity();
+    final Connectivity connectivity = Connectivity();
     const Logger log = Logger('offlineTxStore');
 
     receivePort.listen((tx) async {
-      if (!DeviceInfo.isPhysicalDevice ||
-          ConnectivityResult.none != await _connectivity.checkConnectivity()) {
+      if (
+        !DeviceInfo.isPhysicalDevice
+        ||
+        ConnectivityResult.none != (await connectivity.checkConnectivity())[0]
+      ) {
         final TxReceive offlineTx = tx as TxReceive;
-        try {
-          await Get.find<ApiProvider>().transferDcepV2(
-            offlineTx.from,
-            offlineTx.publicKey,
-            offlineTx.tx,
-          );
-        } catch (e) {
-          log.error('offlineTx transfer error: $e');
-        }
+        /// TODO
+        // try {
+        //   await Get.find<ApiProvider>().transferDcepV2(
+        //     offlineTx.from,
+        //     offlineTx.publicKey,
+        //     offlineTx.tx,
+        //   );
+        // } catch (e) {
+        //   log.error('offlineTx transfer error: $e');
+        // }
 
         await _store.deleteItem(_itemKey(offlineTx));
-        _txQueue.remove(tx);
+        txQueue.remove(tx);
       }
     });
 
     await _store.getListLike('$offlineTxPrefix: %').then((list) {
       if (null != list && list.isNotEmpty) {
-        _txQueue.addAll(list.map((item) => TxReceive.fromJson(item)!));
+        txQueue.addAll(list.map((item) => TxReceive.fromJson(item)!));
       }
     });
 
-    return OfflineTxStore(receivePort.sendPort, Rx(_txQueue), _connectivity);
+    return OfflineTxStore(receivePort.sendPort, Rx(txQueue), connectivity);
   }
 
   Future<void> addOne(TxReceive tx) async {
     await _store.setItem(_itemKey(tx), tx.toJson()).then((_) async {
       txQueue.value.add(tx);
       txQueue.refresh();
-      if (ConnectivityResult.none != await _connectivity.checkConnectivity()) {
+      if (ConnectivityResult.none != (await _connectivity.checkConnectivity())[0]) {
         _sendPort.send(tx);
       }
     });

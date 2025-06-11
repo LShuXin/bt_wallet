@@ -14,7 +14,7 @@ import 'package:bt_wallet_flutter_01/common/theme/index.dart';
 import 'package:bt_wallet_flutter_01/models/dcep/dcep.dart';
 import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
 import 'package:bt_wallet_flutter_01/models/offline_tx/offline_tx.dart';
-import 'package:bt_wallet_flutter_01/store/dcep/dcep_store.dart';
+import 'package:bt_wallet_flutter_01/store/dcep_store.dart';
 import 'package:bt_wallet_flutter_01/views/ble_payment/common/command.dart';
 import 'package:bt_wallet_flutter_01/views/ble_payment/payer/payee.dart';
 import 'package:bt_wallet_flutter_01/views/ble_payment/payer/session.dart';

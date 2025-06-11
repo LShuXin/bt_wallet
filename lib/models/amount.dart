@@ -2,21 +2,22 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/serializer.dart';
 import 'package:decimal/decimal.dart';
 import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/common/util.dart';
+import 'package:bt_wallet_flutter_01/common/util/format.dart';
 
 class Amount {
   const Amount(this.value);
   final Decimal value;
 
   Decimal get original =>
-      value * Decimal.parse(Decimal.fromInt(10).pow(Application.globalEnv.tokenPrecision).toString());
+    value * Decimal.parse(Decimal.fromInt(10).pow(Application.globalEnv.tokenPrecision).toString());
+
   String get humanReadable => Util.formatDecimal(
-        value,
-        Application.globalEnv.tokenHumanReadablePrecision,
-      );
+    value,
+    Application.globalEnv.tokenHumanReadablePrecision,
+  );
 
   String get humanReadableWithSymbol =>
-      '${Application.globalEnv.tokenSymbol}$humanReadable';
+    '${Application.globalEnv.tokenSymbol}$humanReadable';
 
   String get humanReadableWithSign {
     if (value < Decimal.zero) {
@@ -40,15 +41,14 @@ class Amount {
 }
 
 class AmountSerializer implements PrimitiveSerializer<Amount> {
+
   @override
-  Amount deserialize(Serializers serializers, Object serialized,
-      {FullType specifiedType = FullType.unspecified}) {
+  Amount deserialize(Serializers serializers, Object serialized, {FullType specifiedType = FullType.unspecified}) {
     return Amount.parse(serialized);
   }
 
   @override
-  Object serialize(Serializers serializers, Amount amount,
-      {FullType specifiedType = FullType.unspecified}) {
+  Object serialize(Serializers serializers, Amount amount, {FullType specifiedType = FullType.unspecified}) {
     return amount.toString();
   }
 

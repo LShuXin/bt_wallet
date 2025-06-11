@@ -8,7 +8,7 @@ import 'package:bt_wallet_flutter_01/ble/ble_periphery.dart';
 import 'package:bt_wallet_flutter_01/models/dcep/dcep.dart';
 import 'package:bt_wallet_flutter_01/models/eth_tx_info/eth_tx_info.dart';
 import 'package:bt_wallet_flutter_01/models/offline_tx/offline_tx.dart';
-import 'package:bt_wallet_flutter_01/service/contract.dart';
+import 'package:bt_wallet_flutter_01/service/contract_service.dart';
 import 'package:bt_wallet_flutter_01/service/rlp.dart';
 import 'package:bt_wallet_flutter_01/views/ble_payment/common/command.dart';
 import 'package:bt_wallet_flutter_01/views/ble_payment/common/symm_encrypt.dart';

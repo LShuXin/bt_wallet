@@ -16,14 +16,9 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(Dcep.serializer)
       ..add(DcepType.serializer)
       ..add(DecentralizedIdentity.serializer)
-      ..add(HealthCertification.serializer)
-      ..add(HealthCertificationSub.serializer)
-      ..add(HealthCertificationToken.serializer)
       ..add(HealthInfo.serializer)
-      ..add(HealthyStatus.serializer)
       ..add(IssuerResponse.serializer)
       ..add(ProfileInfo.serializer)
-      ..add(SelectOption.serializer)
       ..add(SendTransactionRequest.serializer)
       ..add(SendTransactionResponse.serializer)
       ..add(Transaction.serializer)
@@ -43,12 +38,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(WebviewRequestMethod.serializer)
       ..add(WebviewSignTransaction.serializer)
       ..add(WebviewTransactionInfo.serializer)
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())

@@ -1,70 +1,77 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+
 import 'package:bt_wallet_flutter_01/common/application.dart';
 import 'package:bt_wallet_flutter_01/common/theme/color.dart';
 import 'package:bt_wallet_flutter_01/common/theme/font.dart';
 import 'package:bt_wallet_flutter_01/common/theme/index.dart';
-import 'package:bt_wallet_flutter_01/service/progress_dialog.dart';
+import 'package:bt_wallet_flutter_01/common/util/progress_dialog.dart';
 import 'package:bt_wallet_flutter_01/views/home/identity/identity_new_store.dart';
 import 'package:bt_wallet_flutter_01/widgets/avatar.dart';
 import 'package:bt_wallet_flutter_01/widgets/error_row.dart';
 import 'package:bt_wallet_flutter_01/widgets/hint_dialog.dart';
 import 'package:bt_wallet_flutter_01/widgets/layouts/common_layout.dart';
 
-class IdentityNewPage extends StatefulWidget {
+class NewIdentityPage extends StatefulWidget {
+  const NewIdentityPage({super.key});
+
   @override
-  State<StatefulWidget> createState() => _IdentityNewPageState();
+  State<StatefulWidget> createState() => _NewIdentityPageState();
 }
 
-class _IdentityNewPageState extends State<IdentityNewPage> {
+class _NewIdentityPageState extends State<NewIdentityPage> {
   bool isAdding = false;
-  final IdentityNewStore store = IdentityNewStore();
+  final NewIdentityStoreStore _store = NewIdentityStoreStore();
   final ProgressDialog _dialog = Get.find();
 
   @override
   void initState() {
     super.initState();
-    store.setErrorResetDispatchers();
+    _store.setErrorResetDispatchers();
   }
 
   @override
   void dispose() {
-    store.dispose();
+    _store.dispose();
     super.dispose();
   }
 
   bool btnDisabled() {
-    return store.name.isEmpty;
+    return _store.name.isEmpty;
   }
 
   Future<void> _addOnPressed() async {
-    store.validateAll();
-    if (!store.error.hasErrors && !isAdding) {
+    _store.validateAll();
+    if (!_store.error.hasErrors && !isAdding) {
       isAdding = true;
       _dialog.show();
-      await store.addIdentity().then((success) {
-        store.clearError();
+      await _store.addIdentity().then((success) async {
+        _store.clearError();
         _dialog.dismiss();
         if (success as bool) {
-          showDialogSimple(DialogType.success, '创建成功')
-              .then((_) => Application.router.pop(context));
+          await showDialogSimple(DialogType.success, '创建成功');
+          if (!mounted) {
+            return;
+          }
+          Application.router.pop(context);
         }
         isAdding = false;
       });
     }
   }
 
-  InputDecoration buildInputDecoration(
-      {required String assetIcon,
-      required String labelText,
-      required String hintText}) {
+  InputDecoration buildInputDecoration({
+    required String assetIcon,
+    required String labelText,
+    required String hintText,
+  }) {
     return InputDecoration(
       icon: SvgPicture.asset(assetIcon),
       labelText: labelText,
-      labelStyle:
-          WalletFont.font_14(textStyle: TextStyle(color: WalletColor.grey)),
+      labelStyle: WalletFont.font_14(textStyle: TextStyle(color: WalletColor.grey)),
       hintText: hintText,
       counterText: '',
       border: InputBorder.none,
@@ -87,11 +94,11 @@ class _IdentityNewPageState extends State<IdentityNewPage> {
           ),
           Container(
             height: 1,
-            color:
-                errorText != null ? WalletColor.accent : WalletColor.middleGrey,
+            color: errorText != null ? WalletColor.accent : WalletColor.middleGrey,
             margin: const EdgeInsets.only(top: 6),
           ),
-          if (errorText != null) ErrorRowWidget(errorText: errorText)
+          if (errorText != null)
+            ErrorRowWidget(errorText: errorText)
         ],
       ),
     );
@@ -128,18 +135,18 @@ class _IdentityNewPageState extends State<IdentityNewPage> {
                           maxLength: 16,
                           keyboardType: TextInputType.text,
                           onChanged: (String value) =>
-                              store.name = value.trim(),
+                            _store.name = value.trim(),
                           decoration: buildInputDecoration(
                             assetIcon: 'assets/icons/name.svg',
                             labelText: '名称*',
                             hintText: '输入名称',
                           ),
                         ),
-                        errorText: store.error.username,
+                        errorText: _store.error.username,
                       ),
                       buildInputField(
                         textFieldChild: TextField(
-                          onChanged: (value) => store.email = value,
+                          onChanged: (value) => _store.email = value,
                           keyboardType: TextInputType.emailAddress,
                           decoration: buildInputDecoration(
                             assetIcon: 'assets/icons/email.svg',
@@ -147,11 +154,11 @@ class _IdentityNewPageState extends State<IdentityNewPage> {
                             hintText: '输入邮箱',
                           ),
                         ),
-                        errorText: store.error.email,
+                        errorText: _store.error.email,
                       ),
                       buildInputField(
                         textFieldChild: TextField(
-                          onChanged: (value) => store.phone = value,
+                          onChanged: (value) => _store.phone = value,
                           keyboardType: TextInputType.phone,
                           decoration: buildInputDecoration(
                             assetIcon: 'assets/icons/phone.svg',
@@ -159,11 +166,11 @@ class _IdentityNewPageState extends State<IdentityNewPage> {
                             hintText: '输入手机号',
                           ),
                         ),
-                        errorText: store.error.phone,
+                        errorText: _store.error.phone,
                       ),
                       buildInputField(
                         textFieldChild: TextField(
-                          onChanged: (value) => store.birthday = value,
+                          onChanged: (value) => _store.birthday = value,
                           keyboardType: TextInputType.datetime,
                           decoration: buildInputDecoration(
                             assetIcon: 'assets/icons/birth.svg',
@@ -171,14 +178,13 @@ class _IdentityNewPageState extends State<IdentityNewPage> {
                             hintText: 'YYYY-MM-DD',
                           ),
                         ),
-                        errorText: store.error.birthday,
+                        errorText: _store.error.birthday,
                       ),
                       Container(
                         margin: const EdgeInsets.only(top: 100),
                         child: WalletTheme.button(
                           text: '确定创建身份',
-                          onPressed:
-                              btnDisabled() || isAdding ? null : _addOnPressed,
+                          onPressed: btnDisabled() || isAdding ? null : _addOnPressed,
                         ),
                       )
                     ],

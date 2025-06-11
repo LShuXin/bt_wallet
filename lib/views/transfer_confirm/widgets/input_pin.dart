@@ -12,7 +12,7 @@ import 'package:bt_wallet_flutter_01/common/theme/font.dart';
 import 'package:bt_wallet_flutter_01/common/theme/index.dart';
 import 'package:bt_wallet_flutter_01/models/webview/pincode_dialog/pincode_dialog_error_msg.dart';
 import 'package:bt_wallet_flutter_01/models/webview/pincode_dialog/pincode_dialog_input.dart';
-import 'package:bt_wallet_flutter_01/service/pincode.dart';
+import 'package:bt_wallet_flutter_01/service/pin_code_service.dart';
 import 'package:bt_wallet_flutter_01/widgets/error_row.dart';
 
 class InputPinWidget extends StatefulWidget {
@@ -55,7 +55,7 @@ class InputPinWidgetState extends State<InputPinWidget> {
     try {
       encrypt.decrypt(encryptedKey, iv: iv);
       if (widget.completer != null) {
-        widget.completer!.complete(PincodeService.createToken());
+        widget.completer!.complete(PinCodeService.createToken());
       }
       return true;
     } catch (error) {

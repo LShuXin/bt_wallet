@@ -2,7 +2,6 @@ import 'dart:typed_data';
 
 import 'package:search_choices/search_choices.dart';
 import 'package:web3dart/crypto.dart';
-// import 'package:collection/collection.dart';
 
 List<Uint8List> decode(Uint8List data) {
   final Tuple2<dynamic, Uint8List> decoded = _decode(data);
@@ -12,8 +11,8 @@ List<Uint8List> decode(Uint8List data) {
   }
 
   return (decoded.item1 as List<List<int>>)
-      .map((v) => Uint8List.fromList(v))
-      .toList();
+    .map((v) => Uint8List.fromList(v))
+    .toList();
 }
 
 int safeParseInt(String v, int base) {

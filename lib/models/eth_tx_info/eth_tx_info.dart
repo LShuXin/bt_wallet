@@ -14,22 +14,31 @@ part 'eth_tx_info.g.dart';
 abstract class EthTxInfo extends Object implements Built<EthTxInfo, EthTxInfoBuilder> {
   static Serializer<EthTxInfo> get serializer => _$ethTxInfoSerializer;
 
+  /// Transaction counter to prevent replay
   BigInt get nonce;
 
+  /// Price per unit of gas
   BigInt get gasPrice;
 
+  /// Max gas allowed for the transaction
   BigInt get gasLimit;
 
+  /// Hex address of the recipient
   String get to;
 
+  /// Amount of ETH to transfer (in wei)
   BigInt get value;
 
+  /// Extra data (e.g., smart contract call input)
   Uint8List get data;
 
+  /// Signature recovery ID
   int get v;
 
+  /// Signature values
   BigInt get r;
 
+  /// Signature values
   BigInt get s;
 
   // https://github.com/ethereumjs/ethereumjs-util/blob/8ffe697fafb33cefc7b7ec01c11e3a7da787fe0e/src/signature.ts#L26

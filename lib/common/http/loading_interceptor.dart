@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart' as g;
-import 'package:bt_wallet_flutter_01/service/progress_dialog.dart';
+import 'package:bt_wallet_flutter_01/common/util/progress_dialog.dart';
 
 class LoadingInterceptor extends InterceptorsWrapper {
   final ProgressDialog _dialog = g.Get.find();
