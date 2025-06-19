@@ -1,78 +1,112 @@
-<h1 align="center">
-  <br>
-  <a href="https://blockchain.thoughtworks.cn/twallet/"><img src="./assets/images/t-wallet.png" alt="TWallet" width="200"></a>
-  <br>
-  TWallet
-  <br>
-  <p align="center">
-    <img src="https://img.shields.io/badge/contributions-welcome-orange.svg" alt="Contributions welcome">
-    <img src="https://img.shields.io/badge/flutter-1.20.0-informational" alt="Flutter">
-    <img src="https://img.shields.io/badge/License-BSD%203--Clause-blue.svg" alt="License">
-  </p>
-</h1>
+# UpChain Wallet - A Powerful & Secure & Open Source Ethereum Android Wallet
 
-<h4 align="center">A leading-edge digital wallet (blockchain-based) project with a token named DC/EP and DID (Decentralized Identifiers) capability and a DApp browser.</h4>
+[![License](https://img.shields.io/badge/license-GPL3-green.svg?style=flat)](https://github.com/fastlane/fastlane/blob/master/LICENSE)
+
+[<img src=https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png height="88">](https://play.google.com/store/apps/details?id=pro.upchain.ethwallet)
+
+登链钱包是一款安全且功能完善的以太坊去中心化钱包（**完全开源**），界面高度模仿 imToken。
+
+使用登链开源钱包，再也不用担心私钥会不会被上传到服务器（不放心可以自己编译一个）。
+
+遵循开源协议： GPL-3.0
+
+如果觉得不错，点个Star ， 感谢！
+
+
+## 目录
+
+* [功能介绍](#功能介绍)
+* [效果演示](#效果演示)
+* [参考的开源项目](#参考的开源项目)
+* [关于我](#关于我)
+
+
+## 功能介绍
+- [x] 账户余额查询及转账功能。
+- [x] 支持通过生成助记词、Keystore文件、私钥 创建钱包账号。
+- [x] 支持导出钱包账号助记词、私钥、Keystore文件。
+- [x] 支持多个钱包账号管理
+- [x] 贴心的以太坊测试网络（Infura Koven及Ropsten）及本地测试网络 支持
+- [x] 支持ERC20 代币（余额显示、转账、代币币价显示）
+- [x] 支持用法币（美元和人民币）实时显示币价。
+- [x] 历史交易列表显示
+- [x] 二维码扫描，兼容imToken 格式
+- [x] 支持 DApp Browser  浏览器
+- [ ] 地址本（联系人）功能 待完善
+- [ ] 比特币及EOS 支持
+
+
+## 效果演示
 
 <p align="center">
-  <img src="https://blockchain.thoughtworks.cn/wp-content/uploads/2020/06/ScreenCut_Pay.svg">
+  <img src="https://github.com/xilibi2003/Upchain-wallet/blob/master/img/wallet.gif" width="450">
 </p>
 
-## TWallet's What-Is
+**DApp 浏览器** 功能：
 
-### What Is A Digital Wallet
+<p align="center">
+  <img src="https://github.com/xilibi2003/Upchain-wallet/blob/master/img/dapp.gif" width="450">
+</p>
 
-***From wikipedia:***
 
-`A digital wallet also known as "e-Wallet" refers to an electronic device, online service, or software program that allows one party to make electronic transactions with another party bartering digital currency units for goods and services. This can include purchasing items on-line with a computer or using a smartphone to purchase something at a store. Money can be deposited in the digital wallet prior to any transactions or, in other cases, an individual's bank account can be linked to the digital wallet. Users might also have their driver's license, health card, loyalty card(s) and other ID documents stored within the wallet. The credentials can be passed to a merchant's terminal wirelessly via near field communication (NFC). Increasingly, digital wallets are being made not just for basic financial transactions but to also authenticate the holder's credentials. For example, a digital wallet could verify the age of the buyer to the store while purchasing alcohol. The system has already gained popularity in Japan, where digital wallets are known as "wallet mobiles". A cryptocurrency wallet is a digital wallet where private keys are stored for cryptocurrencies like bitcoin.`
 
-### What Is DID (Decentralized Identifiers)
+安装包下载[地址](https://img.learnblockchain.cn/apk/upchain_wallet.apk)。
 
-<img width="400px" src="https://blockchain.thoughtworks.cn/wp-content/uploads/2020/06/ScreenCut_Identity.svg" align="right">
 
-***From wikipedia:***
+## 运行配置
 
-`Decentralized identifiers (DIDs) are a type of identifier that enables a verifiable, decentralized digital identity. They are based on the Self-sovereign identity paradigm. A DID identifies any subject (e.g., a person, organization, thing, data model, abstract entity, etc.) that the controller of the DID decides that it identifies. These identifiers are designed to enable the controller of a DID to prove control over it and to be implemented independently of any centralized registry, identity provider, or certificate authority. DIDs are URLs that associate a DID subject with a DID document allowing trustable interactions associated with that subject. Each DID document can express cryptographic material, verification methods, or service endpoints, which provide a set of mechanisms enabling a DID controller to prove control of the DID. Service endpoints enable trusted interactions associated with the DID subject. A DID document might contain semantics about the subject that it identifies. A DID document might contain the DID subject itself (e.g. a data model).`
+项目使用Android Studio 开发。
 
-### What Is A DApp
+创建 local.properties 配置：
+```
+sdk.dir= Android SDK 目录
+gpr.user=
+gpr.key=
+infura.key=
+```
 
-***From wikipedia:***
+gpr 的配置参考： https://developer.trustwallet.com/wallet-core/integration-guide/android-guide
+infura key 用于与节点通信，在 https://www.infura.io/ 申请
 
-`A decentralized application (DApp, dApp, Dapp, or dapp) is a computer application that runs on a distributed computing system. DApps have been popularized by distributed ledger technologies (DLT) such as the Ethereum Blockchain, where DApps are often referred to as smart contracts.`
 
-### What is a DApp Browser
+## 参考的开源项目
 
-`A decentralized app (DApp) browser is a combination of a messaging interface and a UX that enables users to interact with decentralized applications.`
+本钱包在开发是站在巨人的肩膀上完成，特别感谢以下项目：
 
-## User Guide
+* [web3j](https://docs.web3j.io/index.html)
+* [bitcoinj](https://bitcoinj.github.io/javadoc/0.14.7/)
+* [Trust-wallet](https://github.com/TrustWallet/trust-wallet-android-source)
+* [ETHWallet](https://github.com/DwyaneQ/ETHWallet)
+* [BGAQRCode](https://github.com/bingoogolapple/BGAQRCode-Android)
 
-### How To Try The App
+## 关于我
 
-We don't plan to release this app to the app market at this stage. If you want to try directly, [you can apply here.](https://blockchain.thoughtworks.cn/twallet/)
+本钱包由登链社区牵头开发，[登链社区](https://learnblockchain.cn)是高质量的中文区块链技术社区，希望我们输出的文章、课程、代码 能推动区块链技术在国内的发展。
 
-### Welcome Feedbacks
+感谢[254497767](https://github.com/254497767) 提交 PR ，更新钱包依赖的相关代码库。
 
-Please don't be stingy to give us feedback. You can go to [issues page](https://github.com/tw-bc-group/TWallet/issues) and submit with the existed labels or a new one. We will deal with it as soon as possible.
 
-## For Developers
+加登链社区技术群， 可扫微信二维码：
+<p align="center">
+  <img src="https://img.learnblockchain.cn/qrcode/xiaona-2.jpg" width="300">
+</p>
 
-### Quick Start
 
-1. make sure you have ```flutter``` installed
-2. ```flutter doctor``` to check your `flutter` environment and find which device you can use to build the app
-3. ```flutter run --no-sound-null-safety -d device``` run the project in specific device
 
-### Contributing
+如果有技术问题，可到[登链社区 - 问答区](https://learnblockchain.cn/questions)提问， 或进入 [Discord](https://discord.gg/hRZrM92hfw) 讨论。
 
-If you have read up till here, then 🎉🎉🎉. There are couple of ways in which you can contribute to
-this growing project.
+技术合作，可联系我的邮箱(Email): xlb@upchain.pro
 
-- Pick up any issue marked with labels
-- Propose any feature, enhancement
-- Report a bug
-- Fix a bug
-- Participate in a discussion and help in decision making
-- Send in a Pull Request :-)
 
-## Reminding
+你的支持将鼓励我继续提供更好的作品给大家:octocat:
 
-<p style="color: darkred;">The codebase follows the BSD 3-Clause License. Please do not package and upload this code to the application market at will!</p>
+<p align="center">
+  <img src="https://learnblockchain.cn/images/qr_pay.jpg" width="300">
+</p>
+
+
+
+
+
+
+
