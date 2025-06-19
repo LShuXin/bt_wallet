@@ -6,9 +6,9 @@ import 'package:get/get.dart';
 import 'package:json_store/json_store.dart';
 import 'package:quick_log/quick_log.dart';
 
-import 'package:bt_wallet_flutter_01/common/device_info.dart';
-import 'package:bt_wallet_flutter_01/models/offline_tx/offline_tx.dart';
-import 'package:bt_wallet_flutter_01/service/api_provider.dart';
+import 'package:bt_wallet/common/device_info.dart';
+import 'package:bt_wallet/models/offline_tx/offline_tx.dart';
+import 'package:bt_wallet/service/api_provider.dart';
 
 const offlineTxPrefix = 'offlineTx';
 

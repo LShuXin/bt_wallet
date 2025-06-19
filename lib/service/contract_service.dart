@@ -6,9 +6,9 @@ import 'package:optional/optional.dart';
 import 'package:web3dart/crypto.dart';
 import 'package:web3dart/web3dart.dart';
 
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/service/api_provider.dart';
-import 'package:bt_wallet_flutter_01/service/blockchain_service.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/service/api_provider.dart';
+import 'package:bt_wallet/service/blockchain_service.dart';
 
 /// Defines a maximum gas limit for Ethereum-compatible blockchain transactions
 const int maxGas = 300000;

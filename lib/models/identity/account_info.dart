@@ -1,8 +1,8 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-import 'package:bt_wallet_flutter_01/models/amount.dart';
-import 'package:bt_wallet_flutter_01/models/serializer.dart';
+import 'package:bt_wallet/models/amount.dart';
+import 'package:bt_wallet/models/serializer.dart';
 
 part 'account_info.g.dart';
 

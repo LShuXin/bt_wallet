@@ -1,7 +1,7 @@
-import 'package:bt_wallet_flutter_01/views/home/widgets/home_page.dart';
-import 'package:bt_wallet_flutter_01/views/home/discovery/discovery_page.dart';
-import 'package:bt_wallet_flutter_01/views/home/identity/identity_page.dart';
-import 'package:bt_wallet_flutter_01/views/home/my/my_page.dart';
+import 'package:bt_wallet/views/home/widgets/home_page.dart';
+import 'package:bt_wallet/views/home/discovery/discovery_page.dart';
+import 'package:bt_wallet/views/home/identity/identity_page.dart';
+import 'package:bt_wallet/views/home/my/my_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
@@ -9,9 +9,9 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/service/dapp.dart';
-import 'package:bt_wallet_flutter_01/views/home/home_store.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/service/dapp.dart';
+import 'package:bt_wallet/views/home/home_store.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key, this.defaultIndex = 0});

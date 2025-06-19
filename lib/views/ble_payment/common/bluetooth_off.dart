@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ble_lib_ios_15/flutter_ble_lib.dart';
-import 'package:bt_wallet_flutter_01/widgets/layouts/common_layout.dart';
+import 'package:bt_wallet/widgets/layouts/common_layout.dart';
 
 class BluetoothOffScreen extends StatelessWidget {
   const BluetoothOffScreen({super.key, this.state});

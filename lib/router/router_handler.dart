@@ -1,27 +1,27 @@
-import 'package:bt_wallet_flutter_01/views/restore_hd_wallet/restore_hd_wallet.dart';
-import 'package:bt_wallet_flutter_01/views/splash_screen/splash_screen_page.dart';
+import 'package:bt_wallet/views/restore_hd_wallet/restore_hd_wallet.dart';
+import 'package:bt_wallet/views/splash_screen/splash_screen_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:fluro/fluro.dart';
 import 'package:optional/optional_internal.dart';
 
-import 'package:bt_wallet_flutter_01/views/create_hd_wallet/create_hd_wallet_page.dart';
-import 'package:bt_wallet_flutter_01/views/confirm_hd_wallet/confirm_hd_wallet.dart';
-import 'package:bt_wallet_flutter_01/views/dapp/dapp.dart';
-import 'package:bt_wallet_flutter_01/views/home/my/chat.dart';
-import 'package:bt_wallet_flutter_01/views/home/home.dart';
-import 'package:bt_wallet_flutter_01/views/home/identity/identity_new_page.dart';
-import 'package:bt_wallet_flutter_01/views/home/my/message_page.dart';
-import 'package:bt_wallet_flutter_01/views/identity_qr/identity_qr_code.dart';
-import 'package:bt_wallet_flutter_01/views/input_pin/input_pin_page.dart';
-import 'package:bt_wallet_flutter_01/views/wallet_entry/wallet_entry_page.dart';
-import 'package:bt_wallet_flutter_01/views/profile/profile.dart';
-import 'package:bt_wallet_flutter_01/views/qr_scanner/qr_scanner.dart';
-import 'package:bt_wallet_flutter_01/views/restore_hd_wallet/restore_hd_wallet.dart';
-import 'package:bt_wallet_flutter_01/views/transfer/transfer.dart';
-import 'package:bt_wallet_flutter_01/views/transfer_confirm/transfer_confirm.dart';
-import 'package:bt_wallet_flutter_01/views/tx_list/tx_list_details_page.dart';
-import 'package:bt_wallet_flutter_01/views/tx_list/tx_list_page.dart';
+import 'package:bt_wallet/views/create_hd_wallet/create_hd_wallet_page.dart';
+import 'package:bt_wallet/views/confirm_hd_wallet/confirm_hd_wallet.dart';
+import 'package:bt_wallet/views/dapp/dapp.dart';
+import 'package:bt_wallet/views/home/my/chat.dart';
+import 'package:bt_wallet/views/home/home.dart';
+import 'package:bt_wallet/views/home/identity/identity_new_page.dart';
+import 'package:bt_wallet/views/home/my/message_page.dart';
+import 'package:bt_wallet/views/identity_qr/identity_qr_code.dart';
+import 'package:bt_wallet/views/input_pin/input_pin_page.dart';
+import 'package:bt_wallet/views/wallet_entry/wallet_entry_page.dart';
+import 'package:bt_wallet/views/profile/profile.dart';
+import 'package:bt_wallet/views/qr_scanner/qr_scanner.dart';
+import 'package:bt_wallet/views/restore_hd_wallet/restore_hd_wallet.dart';
+import 'package:bt_wallet/views/transfer/transfer.dart';
+import 'package:bt_wallet/views/transfer_confirm/transfer_confirm.dart';
+import 'package:bt_wallet/views/tx_list/tx_list_details_page.dart';
+import 'package:bt_wallet/views/tx_list/tx_list_page.dart';
 
 Handler splashScreenPageHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {

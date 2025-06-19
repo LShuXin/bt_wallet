@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bt_wallet_flutter_01/models/transaction.dart';
+import 'package:bt_wallet/models/transaction.dart';
 
 void main() {
   group('Transaction', () {

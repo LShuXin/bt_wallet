@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/font.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/font.dart';
 
 enum TxInfoCardType { sender, receiver }
 

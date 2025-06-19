@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/models/identity/decentralized_identity.dart';
 
 import 'identity_card.dart';
 

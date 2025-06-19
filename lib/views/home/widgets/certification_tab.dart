@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/views/home/widgets/home_list_item.dart';
-import 'package:bt_wallet_flutter_01/views/home/widgets/home_list_view.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/views/home/widgets/home_list_item.dart';
+import 'package:bt_wallet/views/home/widgets/home_list_view.dart';
 
 class CertificationTab extends StatelessWidget {
   const CertificationTab({Key? key}) : super(key: key);

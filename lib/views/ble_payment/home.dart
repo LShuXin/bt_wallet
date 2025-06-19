@@ -8,21 +8,21 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:web3dart/web3dart.dart';
 
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/index.dart';
-import 'package:bt_wallet_flutter_01/models/dcep/dcep.dart';
-import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
-import 'package:bt_wallet_flutter_01/models/offline_tx/offline_tx.dart';
-import 'package:bt_wallet_flutter_01/service/contract_service.dart';
-import 'package:bt_wallet_flutter_01/store/dcep_store.dart';
-import 'package:bt_wallet_flutter_01/store/identity_store.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/common/tx_store.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/payee/payee_confirm.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/payer/payee_list.dart';
-import 'package:bt_wallet_flutter_01/views/home/home.dart';
-import 'package:bt_wallet_flutter_01/views/home/home_store.dart';
-import 'package:bt_wallet_flutter_01/widgets/hint_dialog.dart';
-import 'package:bt_wallet_flutter_01/widgets/layouts/common_layout.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/index.dart';
+import 'package:bt_wallet/models/dcep/dcep.dart';
+import 'package:bt_wallet/models/identity/decentralized_identity.dart';
+import 'package:bt_wallet/models/offline_tx/offline_tx.dart';
+import 'package:bt_wallet/service/contract_service.dart';
+import 'package:bt_wallet/store/dcep_store.dart';
+import 'package:bt_wallet/store/identity_store.dart';
+import 'package:bt_wallet/views/ble_payment/common/tx_store.dart';
+import 'package:bt_wallet/views/ble_payment/payee/payee_confirm.dart';
+import 'package:bt_wallet/views/ble_payment/payer/payee_list.dart';
+import 'package:bt_wallet/views/home/home.dart';
+import 'package:bt_wallet/views/home/home_store.dart';
+import 'package:bt_wallet/widgets/hint_dialog.dart';
+import 'package:bt_wallet/widgets/layouts/common_layout.dart';
 
 class BlePaymentHome extends StatefulWidget {
   final HomeStore homeStore;

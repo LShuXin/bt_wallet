@@ -5,12 +5,12 @@ import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/store/identity_store.dart';
-import 'package:bt_wallet_flutter_01/views/home/my/chat.dart';
-import 'package:bt_wallet_flutter_01/views/home/my/users.dart';
-import 'package:bt_wallet_flutter_01/widgets/layouts/common_layout.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/store/identity_store.dart';
+import 'package:bt_wallet/views/home/my/chat.dart';
+import 'package:bt_wallet/views/home/my/users.dart';
+import 'package:bt_wallet/widgets/layouts/common_layout.dart';
 
 import '../../../router/routers.dart';
 import '../../../service/firbase_service.dart';

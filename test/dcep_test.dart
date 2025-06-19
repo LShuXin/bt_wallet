@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bt_wallet_flutter_01/models/dcep/dcep.dart';
+import 'package:bt_wallet/models/dcep/dcep.dart';
 
 void main() {
   group('dcep test', () {

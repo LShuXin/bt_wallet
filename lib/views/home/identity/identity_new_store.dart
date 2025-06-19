@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 import 'package:mobx/mobx.dart';
-import 'package:bt_wallet_flutter_01/common/util/format.dart';
-import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
-import 'package:bt_wallet_flutter_01/store/identity_store.dart';
-import 'package:bt_wallet_flutter_01/store/mnemonics.dart';
-import 'package:bt_wallet_flutter_01/views/home/identity/date_validator.dart';
+import 'package:bt_wallet/common/util/format.dart';
+import 'package:bt_wallet/models/identity/decentralized_identity.dart';
+import 'package:bt_wallet/store/identity_store.dart';
+import 'package:bt_wallet/store/mnemonics.dart';
+import 'package:bt_wallet/views/home/identity/date_validator.dart';
 import 'package:uuid/uuid.dart';
 import 'package:validators/validators.dart';
 

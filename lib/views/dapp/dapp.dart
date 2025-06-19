@@ -6,11 +6,11 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:bt_wallet_flutter_01/common/dapp_list.dart';
-import 'package:bt_wallet_flutter_01/common/device_info.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/models/webview/webview_request.dart';
-import 'package:bt_wallet_flutter_01/service/dapp.dart';
+import 'package:bt_wallet/common/dapp_list.dart';
+import 'package:bt_wallet/common/device_info.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/models/webview/webview_request.dart';
+import 'package:bt_wallet/service/dapp.dart';
 
 class DAppPage extends StatefulWidget {
   final String id;

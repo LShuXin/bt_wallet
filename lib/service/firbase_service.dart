@@ -4,7 +4,7 @@ import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
+import 'package:bt_wallet/models/identity/decentralized_identity.dart';
 
 class FirebaseService {
   Future<void> initFirebase() async {

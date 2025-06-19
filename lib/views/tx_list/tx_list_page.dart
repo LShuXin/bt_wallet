@@ -4,20 +4,20 @@ import 'package:decimal/decimal.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get/get.dart';
 
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/common/device_info.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/font.dart';
-import 'package:bt_wallet_flutter_01/common/theme/index.dart';
-import 'package:bt_wallet_flutter_01/models/amount.dart';
-import 'package:bt_wallet_flutter_01/models/transaction.dart';
-import 'package:bt_wallet_flutter_01/router/routers.dart';
-import 'package:bt_wallet_flutter_01/store/identity_store.dart';
-import 'package:bt_wallet_flutter_01/views/tx_list/store/tx_list_store.dart';
-import 'package:bt_wallet_flutter_01/views/tx_list/tx_list_details_page.dart';
-import 'package:bt_wallet_flutter_01/views/tx_list/utils/date.dart';
-import 'package:bt_wallet_flutter_01/views/tx_list/widgets/tx_list_item.dart';
-import 'package:bt_wallet_flutter_01/widgets/layouts/common_layout.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/common/device_info.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/font.dart';
+import 'package:bt_wallet/common/theme/index.dart';
+import 'package:bt_wallet/models/amount.dart';
+import 'package:bt_wallet/models/transaction.dart';
+import 'package:bt_wallet/router/routers.dart';
+import 'package:bt_wallet/store/identity_store.dart';
+import 'package:bt_wallet/views/tx_list/store/tx_list_store.dart';
+import 'package:bt_wallet/views/tx_list/tx_list_details_page.dart';
+import 'package:bt_wallet/views/tx_list/utils/date.dart';
+import 'package:bt_wallet/views/tx_list/widgets/tx_list_item.dart';
+import 'package:bt_wallet/widgets/layouts/common_layout.dart';
 
 class TxListPage extends StatefulWidget {
   const TxListPage({super.key});

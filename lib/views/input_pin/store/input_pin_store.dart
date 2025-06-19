@@ -2,7 +2,7 @@ import 'package:encrypt/encrypt.dart';
 import 'package:get/get.dart';
 import 'package:mobx/mobx.dart';
 import 'package:random_string/random_string.dart';
-import 'package:bt_wallet_flutter_01/common/secure_storage.dart';
+import 'package:bt_wallet/common/secure_storage.dart';
 
 part 'input_pin_store.g.dart';
 

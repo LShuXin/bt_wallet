@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/font.dart';
-import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/payee/payment.dart';
-import 'package:bt_wallet_flutter_01/widgets/layouts/common_layout.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/font.dart';
+import 'package:bt_wallet/models/identity/decentralized_identity.dart';
+import 'package:bt_wallet/views/ble_payment/payee/payment.dart';
+import 'package:bt_wallet/widgets/layouts/common_layout.dart';
 
 class PayeeConfirm extends StatelessWidget {
   final Rx<int> _payeeAmount = Rx(100);

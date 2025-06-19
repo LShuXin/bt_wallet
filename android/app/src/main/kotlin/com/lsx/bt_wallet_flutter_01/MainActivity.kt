@@ -1,4 +1,4 @@
-package com.lsx.bt_wallet_flutter_01
+package com.lsx.bt_wallet
 
 import io.flutter.embedding.android.FlutterActivity
 

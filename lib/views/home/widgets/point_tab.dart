@@ -4,11 +4,11 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get/get.dart';
 import 'package:mobx/mobx.dart';
 import 'package:optional/optional.dart';
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/models/amount.dart';
-import 'package:bt_wallet_flutter_01/models/tw_balance.dart';
-import 'package:bt_wallet_flutter_01/router/routers.dart';
-import 'package:bt_wallet_flutter_01/store/identity_store.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/models/amount.dart';
+import 'package:bt_wallet/models/tw_balance.dart';
+import 'package:bt_wallet/router/routers.dart';
+import 'package:bt_wallet/store/identity_store.dart';
 
 import 'home_list_item.dart';
 import 'home_list_view.dart';

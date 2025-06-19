@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:ai_barcode/ai_barcode.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-import 'package:bt_wallet_flutter_01/common/application.dart';
+import 'package:bt_wallet/common/application.dart';
 
 class QrScannerPage extends StatefulWidget {
   const QrScannerPage({super.key});

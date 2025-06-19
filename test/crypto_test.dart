@@ -9,9 +9,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:tuple/tuple.dart';
 import 'package:optional/optional.dart';
 import 'package:random_string/random_string.dart';
-import 'package:bt_wallet_flutter_01/models/eth_tx_info/eth_tx_info.dart';
-import 'package:bt_wallet_flutter_01/service/blockchain_service.dart';
-import 'package:bt_wallet_flutter_01/service/rlp.dart';
+import 'package:bt_wallet/models/eth_tx_info/eth_tx_info.dart';
+import 'package:bt_wallet/service/blockchain_service.dart';
+import 'package:bt_wallet/service/rlp.dart';
 import 'package:web3dart/crypto.dart';
 import 'package:web3dart/src/utils/rlp.dart' as rlp;
 

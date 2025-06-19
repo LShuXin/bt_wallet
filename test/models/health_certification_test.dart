@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bt_wallet_flutter_01/models/health_certification.dart';
+import 'package:bt_wallet/models/health_certification.dart';
 
 void main() {
   group('HealthCertification', () {

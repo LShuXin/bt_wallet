@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:bt_wallet_flutter_01/views/home/widgets/home_list_item.dart';
-import 'package:bt_wallet_flutter_01/views/home/widgets/home_list_view.dart';
+import 'package:bt_wallet/views/home/widgets/home_list_item.dart';
+import 'package:bt_wallet/views/home/widgets/home_list_view.dart';
 
 class TicketTab extends StatelessWidget {
   const TicketTab({Key? key}) : super(key: key);

@@ -6,13 +6,13 @@ import 'package:flutter_ble_lib_ios_15/flutter_ble_lib.dart';
 // import 'package:flutter_blue/flutter_blue.dart' as flutter_blue;
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/common/bluetooth_off.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/payer/hex_painter.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/payer/payee.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/payer/payment.dart';
-import 'package:bt_wallet_flutter_01/widgets/layouts/common_layout.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/models/identity/decentralized_identity.dart';
+import 'package:bt_wallet/views/ble_payment/common/bluetooth_off.dart';
+import 'package:bt_wallet/views/ble_payment/payer/hex_painter.dart';
+import 'package:bt_wallet/views/ble_payment/payer/payee.dart';
+import 'package:bt_wallet/views/ble_payment/payer/payment.dart';
+import 'package:bt_wallet/widgets/layouts/common_layout.dart';
 
 class PayeeListView extends ListView {
   PayeeListView(DecentralizedIdentity identity, RxList<Payee> payees)

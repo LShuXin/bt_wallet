@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/common/device_info.dart';
-import 'package:bt_wallet_flutter_01/common/getx.dart';
-import 'package:bt_wallet_flutter_01/common/secure_storage.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/router/routers.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/common/device_info.dart';
+import 'package:bt_wallet/common/getx.dart';
+import 'package:bt_wallet/common/secure_storage.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/router/routers.dart';
 
 class SplashScreenPage extends StatefulWidget {
   const SplashScreenPage({super.key});

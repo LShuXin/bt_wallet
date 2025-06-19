@@ -1,9 +1,9 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-import 'package:bt_wallet_flutter_01/models/amount.dart';
-import 'package:bt_wallet_flutter_01/models/serializer.dart';
-import 'package:bt_wallet_flutter_01/models/tx_status.dart';
+import 'package:bt_wallet/models/amount.dart';
+import 'package:bt_wallet/models/serializer.dart';
+import 'package:bt_wallet/models/tx_status.dart';
 
 part 'transaction.g.dart';
 

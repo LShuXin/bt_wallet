@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:919319918438:android:39244af4845c812e563aa7",
         "android_client_info": {
-          "package_name": "com.lsx.bt_wallet_flutter_01_ui"
+          "package_name": "com.lsx.bt_wallet_ui"
         }
       },
       "oauth_client": [

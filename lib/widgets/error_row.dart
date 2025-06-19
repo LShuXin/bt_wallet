@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/font.dart';
-import 'package:bt_wallet_flutter_01/common/theme/index.dart';
-import 'package:bt_wallet_flutter_01/models/webview/pincode_dialog/pincode_dialog_error_msg.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/font.dart';
+import 'package:bt_wallet/common/theme/index.dart';
+import 'package:bt_wallet/models/webview/pincode_dialog/pincode_dialog_error_msg.dart';
 
 class ErrorRowWidget extends StatelessWidget {
   final String errorText;

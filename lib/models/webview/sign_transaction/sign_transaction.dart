@@ -1,8 +1,8 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:bt_wallet_flutter_01/models/serializer.dart';
-import 'package:bt_wallet_flutter_01/models/webview/pincode_dialog/pincode_dialog_style.dart';
-import 'package:bt_wallet_flutter_01/models/webview/sign_transaction/transaction_info.dart';
+import 'package:bt_wallet/models/serializer.dart';
+import 'package:bt_wallet/models/webview/pincode_dialog/pincode_dialog_style.dart';
+import 'package:bt_wallet/models/webview/sign_transaction/transaction_info.dart';
 
 part 'sign_transaction.g.dart';
 

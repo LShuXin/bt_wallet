@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:corsac_jwt/corsac_jwt.dart';
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/models/webview/pincode_dialog/pincode_dialog_style.dart';
-import 'package:bt_wallet_flutter_01/widgets/pin_dialog.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/models/webview/pincode_dialog/pincode_dialog_style.dart';
+import 'package:bt_wallet/widgets/pin_dialog.dart';
 
 const tokenSecret = 'tokenSecret';
 

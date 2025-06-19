@@ -9,16 +9,16 @@ import 'package:optional/optional.dart';
 import 'package:tuple/tuple.dart';
 import 'package:web3dart/crypto.dart';
 
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/index.dart';
-import 'package:bt_wallet_flutter_01/models/dcep/dcep.dart';
-import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
-import 'package:bt_wallet_flutter_01/models/offline_tx/offline_tx.dart';
-import 'package:bt_wallet_flutter_01/store/dcep_store.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/common/command.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/payer/payee.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/payer/session.dart';
-import 'package:bt_wallet_flutter_01/widgets/layouts/common_layout.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/index.dart';
+import 'package:bt_wallet/models/dcep/dcep.dart';
+import 'package:bt_wallet/models/identity/decentralized_identity.dart';
+import 'package:bt_wallet/models/offline_tx/offline_tx.dart';
+import 'package:bt_wallet/store/dcep_store.dart';
+import 'package:bt_wallet/views/ble_payment/common/command.dart';
+import 'package:bt_wallet/views/ble_payment/payer/payee.dart';
+import 'package:bt_wallet/views/ble_payment/payer/session.dart';
+import 'package:bt_wallet/widgets/layouts/common_layout.dart';
 
 
 enum PaymentProgress {

@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/font.dart';
-import 'package:bt_wallet_flutter_01/common/theme/index.dart';
-import 'package:bt_wallet_flutter_01/models/webview/pincode_dialog/pincode_dialog_style.dart';
-import 'package:bt_wallet_flutter_01/service/pin_code_service.dart';
-import 'package:bt_wallet_flutter_01/views/transfer_confirm/widgets/input_pin.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/font.dart';
+import 'package:bt_wallet/common/theme/index.dart';
+import 'package:bt_wallet/models/webview/pincode_dialog/pincode_dialog_style.dart';
+import 'package:bt_wallet/service/pin_code_service.dart';
+import 'package:bt_wallet/views/transfer_confirm/widgets/input_pin.dart';
 
 class PinDialogWidget extends StatelessWidget {
   final Completer completer;

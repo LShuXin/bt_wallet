@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/color.dart';
 
 class AvatarWidget extends StatelessWidget {
   const AvatarWidget({this.hasBoarder = false, this.width = 75});

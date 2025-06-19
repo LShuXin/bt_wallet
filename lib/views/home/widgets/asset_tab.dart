@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/views/home/widgets/home_list_item.dart';
-import 'package:bt_wallet_flutter_01/views/home/widgets/home_list_view.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/views/home/widgets/home_list_item.dart';
+import 'package:bt_wallet/views/home/widgets/home_list_view.dart';
 
 class AssetTab extends StatelessWidget {
   const AssetTab({Key? key}) : super(key: key);

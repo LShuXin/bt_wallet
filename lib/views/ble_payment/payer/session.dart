@@ -9,10 +9,10 @@ import 'package:get/get.dart';
 import 'package:optional/optional.dart';
 import 'package:random_string/random_string.dart';
 
-import 'package:bt_wallet_flutter_01/models/offline_tx/offline_tx.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/common/command.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/common/extension.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/common/symm_encrypt.dart';
+import 'package:bt_wallet/models/offline_tx/offline_tx.dart';
+import 'package:bt_wallet/views/ble_payment/common/command.dart';
+import 'package:bt_wallet/views/ble_payment/common/extension.dart';
+import 'package:bt_wallet/views/ble_payment/common/symm_encrypt.dart';
 
 typedef WaitOnSignPayment = Future<Optional<List<TxSend>>> Function(
     String toAddress, int amount);

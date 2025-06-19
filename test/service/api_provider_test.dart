@@ -3,12 +3,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart' as g;
 import 'package:mockito/mockito.dart';
 import 'package:optional/optional.dart';
-import 'package:bt_wallet_flutter_01/common/http/http_client.dart';
-import 'package:bt_wallet_flutter_01/models/contract.dart';
-import 'package:bt_wallet_flutter_01/models/health_certification_token.dart';
-import 'package:bt_wallet_flutter_01/models/transaction.dart';
-import 'package:bt_wallet_flutter_01/models/tw_balance.dart';
-import 'package:bt_wallet_flutter_01/service/api_provider.dart';
+import 'package:bt_wallet/common/http/http_client.dart';
+import 'package:bt_wallet/models/contract.dart';
+import 'package:bt_wallet/models/health_certification_token.dart';
+import 'package:bt_wallet/models/transaction.dart';
+import 'package:bt_wallet/models/tw_balance.dart';
+import 'package:bt_wallet/service/api_provider.dart';
 
 class MockHttpClient extends Mock implements HttpClient {}
 

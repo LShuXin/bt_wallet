@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:bt_wallet_flutter_01/widgets/avatar.dart';
+import 'package:bt_wallet/widgets/avatar.dart';
 
 class IdentityCard extends StatelessWidget {
   final String name;

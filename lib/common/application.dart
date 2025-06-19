@@ -1,6 +1,6 @@
 import 'package:fluro/fluro.dart';
 
-import 'package:bt_wallet_flutter_01/models/env.dart';
+import 'package:bt_wallet/models/env.dart';
 
 enum ENV {
   production,

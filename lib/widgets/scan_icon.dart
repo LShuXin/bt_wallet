@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/router/routers.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/router/routers.dart';
 
 import 'hint_dialog.dart';
 

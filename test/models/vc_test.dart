@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bt_wallet_flutter_01/models/verifiable_credential.dart';
+import 'package:bt_wallet/models/verifiable_credential.dart';
 
 void main() {
   group('VC', () {

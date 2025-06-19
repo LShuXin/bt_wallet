@@ -13,7 +13,7 @@
         android:required="false" />
 
     <application
-        android:label="bt_wallet_flutter_01"
+        android:label="bt_wallet"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">

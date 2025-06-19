@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/widgets/countdown_timer.dart';
-import 'package:bt_wallet_flutter_01/widgets/error_row.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/widgets/countdown_timer.dart';
+import 'package:bt_wallet/widgets/error_row.dart';
 
 class QrCard extends StatefulWidget {
   const QrCard({

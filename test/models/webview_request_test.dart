@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bt_wallet_flutter_01/models/webview/sign_transaction/sign_transaction.dart';
-import 'package:bt_wallet_flutter_01/models/webview/webview_request.dart';
-import 'package:bt_wallet_flutter_01/models/webview/webview_request_method.dart';
+import 'package:bt_wallet/models/webview/sign_transaction/sign_transaction.dart';
+import 'package:bt_wallet/models/webview/webview_request.dart';
+import 'package:bt_wallet/models/webview/webview_request_method.dart';
 
 void main() {
   group('WebView Test', () {

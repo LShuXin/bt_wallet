@@ -4,15 +4,15 @@ import 'package:dio/dio.dart';
 import 'package:get/get.dart' as g;
 import 'package:optional/optional.dart';
 
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/common/http/http_client.dart';
-import 'package:bt_wallet_flutter_01/models/api_response.dart';
-import 'package:bt_wallet_flutter_01/models/contract.dart';
-import 'package:bt_wallet_flutter_01/models/dcep/dcep.dart';
-import 'package:bt_wallet_flutter_01/models/issuer_response.dart';
-import 'package:bt_wallet_flutter_01/models/transaction.dart';
-import 'package:bt_wallet_flutter_01/models/tw_balance.dart';
-import 'package:bt_wallet_flutter_01/models/vc_type_response.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/common/http/http_client.dart';
+import 'package:bt_wallet/models/api_response.dart';
+import 'package:bt_wallet/models/contract.dart';
+import 'package:bt_wallet/models/dcep/dcep.dart';
+import 'package:bt_wallet/models/issuer_response.dart';
+import 'package:bt_wallet/models/transaction.dart';
+import 'package:bt_wallet/models/tw_balance.dart';
+import 'package:bt_wallet/models/vc_type_response.dart';
 
 class ApiProvider {
   final HttpClient _httpClient = g.Get.find();

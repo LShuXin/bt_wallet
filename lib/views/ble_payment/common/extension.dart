@@ -3,7 +3,7 @@ import 'dart:typed_data';
 
 import 'package:flutter_ble_lib_ios_15/flutter_ble_lib.dart';
 
-import 'package:bt_wallet_flutter_01/views/ble_payment/common/symm_encrypt.dart';
+import 'package:bt_wallet/views/ble_payment/common/symm_encrypt.dart';
 
 import 'command.dart';
 

@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/font.dart';
-import 'package:bt_wallet_flutter_01/router/routers.dart';
-import 'package:bt_wallet_flutter_01/widgets/layouts/common_layout.dart';
-import 'package:bt_wallet_flutter_01/widgets/page_title.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/font.dart';
+import 'package:bt_wallet/router/routers.dart';
+import 'package:bt_wallet/widgets/layouts/common_layout.dart';
+import 'package:bt_wallet/widgets/page_title.dart';
 
 class WalletEntryPage extends StatelessWidget {
   const WalletEntryPage({super.key});

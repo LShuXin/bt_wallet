@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/models/verifiable_credential.dart';
-import 'package:bt_wallet_flutter_01/store/identity_store.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/models/verifiable_credential.dart';
+import 'package:bt_wallet/store/identity_store.dart';
 import 'package:validators/validators.dart';
 
 class SsiService {

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:bt_wallet_flutter_01/common/getx.dart';
+import 'package:bt_wallet/common/getx.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,11 +8,11 @@ import 'package:get/get.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:sentry/sentry.dart';
 
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/font.dart';
-import 'package:bt_wallet_flutter_01/router/routers.dart';
-import 'package:bt_wallet_flutter_01/views/splash_screen/splash_screen_page.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/font.dart';
+import 'package:bt_wallet/router/routers.dart';
+import 'package:bt_wallet/views/splash_screen/splash_screen_page.dart';
 
 // native crash support
 final SentryClient sentry = SentryClient(SentryOptions(dsn: 'https://cbc45c2b4f0f400797ca489f4f117699@o402661.ingest.sentry.io/5264109'));

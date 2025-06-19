@@ -1,7 +1,7 @@
 import 'package:mobx/mobx.dart';
 import 'package:optional/optional.dart';
-import 'package:bt_wallet_flutter_01/models/transaction.dart';
-import 'package:bt_wallet_flutter_01/service/api_provider.dart';
+import 'package:bt_wallet/models/transaction.dart';
+import 'package:bt_wallet/service/api_provider.dart';
 
 part 'tx_list_store.g.dart';
 

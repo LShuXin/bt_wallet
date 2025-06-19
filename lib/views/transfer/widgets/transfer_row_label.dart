@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bt_wallet_flutter_01/common/theme/index.dart';
+import 'package:bt_wallet/common/theme/index.dart';
 
 class TransferRowWidget extends StatelessWidget {
   final String title;

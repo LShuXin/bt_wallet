@@ -5,15 +5,15 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'package:get/get.dart';
 
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/font.dart';
-import 'package:bt_wallet_flutter_01/common/theme/index.dart';
-import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
-import 'package:bt_wallet_flutter_01/router/routers.dart';
-import 'package:bt_wallet_flutter_01/store/identity_store.dart';
-import 'package:bt_wallet_flutter_01/widgets/avatar.dart';
-import 'package:bt_wallet_flutter_01/widgets/hint_dialog.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/font.dart';
+import 'package:bt_wallet/common/theme/index.dart';
+import 'package:bt_wallet/models/identity/decentralized_identity.dart';
+import 'package:bt_wallet/router/routers.dart';
+import 'package:bt_wallet/store/identity_store.dart';
+import 'package:bt_wallet/widgets/avatar.dart';
+import 'package:bt_wallet/widgets/hint_dialog.dart';
 
 class IdentityPage extends StatefulWidget {
   const IdentityPage({super.key});

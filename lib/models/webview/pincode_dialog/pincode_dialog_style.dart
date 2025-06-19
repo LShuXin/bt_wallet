@@ -1,11 +1,11 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:bt_wallet_flutter_01/models/serializer.dart';
-import 'package:bt_wallet_flutter_01/models/webview/pincode_dialog/pincode_dialog_close.dart';
-import 'package:bt_wallet_flutter_01/models/webview/pincode_dialog/pincode_dialog_error_msg.dart';
-import 'package:bt_wallet_flutter_01/models/webview/pincode_dialog/pincode_dialog_hint.dart';
-import 'package:bt_wallet_flutter_01/models/webview/pincode_dialog/pincode_dialog_input.dart';
-import 'package:bt_wallet_flutter_01/models/webview/pincode_dialog/pincode_dialog_title.dart';
+import 'package:bt_wallet/models/serializer.dart';
+import 'package:bt_wallet/models/webview/pincode_dialog/pincode_dialog_close.dart';
+import 'package:bt_wallet/models/webview/pincode_dialog/pincode_dialog_error_msg.dart';
+import 'package:bt_wallet/models/webview/pincode_dialog/pincode_dialog_hint.dart';
+import 'package:bt_wallet/models/webview/pincode_dialog/pincode_dialog_input.dart';
+import 'package:bt_wallet/models/webview/pincode_dialog/pincode_dialog_title.dart';
 
 part 'pincode_dialog_style.g.dart';
 

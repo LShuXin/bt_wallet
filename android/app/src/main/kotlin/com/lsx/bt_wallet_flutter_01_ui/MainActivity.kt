@@ -1,4 +1,4 @@
-package com.lsx.bt_wallet_flutter_01_ui
+package com.lsx.bt_wallet_ui
 
 import android.bluetooth.*
 import android.bluetooth.le.AdvertiseCallback

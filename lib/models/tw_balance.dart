@@ -3,9 +3,9 @@ import 'package:built_value/serializer.dart';
 import 'package:decimal/decimal.dart';
 import 'package:get/get.dart';
 import 'package:optional/optional.dart';
-import 'package:bt_wallet_flutter_01/models/amount.dart';
-import 'package:bt_wallet_flutter_01/models/serializer.dart';
-import 'package:bt_wallet_flutter_01/service/api_provider.dart';
+import 'package:bt_wallet/models/amount.dart';
+import 'package:bt_wallet/models/serializer.dart';
+import 'package:bt_wallet/service/api_provider.dart';
 
 part 'tw_balance.g.dart';
 

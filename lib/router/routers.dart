@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:fluro/fluro.dart';
 
-import 'package:bt_wallet_flutter_01/router/router_handler.dart';
+import 'package:bt_wallet/router/router_handler.dart';
 
 class Routes {
   static const String splashScreen = "/";

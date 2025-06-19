@@ -1,6 +1,6 @@
 import 'package:mobx/mobx.dart';
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/models/did.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/models/did.dart';
 
 part 'transfer_store.g.dart';
 

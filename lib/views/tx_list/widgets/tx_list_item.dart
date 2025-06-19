@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:bt_wallet_flutter_01/common/theme/font.dart';
-import 'package:bt_wallet_flutter_01/models/amount.dart';
-import 'package:bt_wallet_flutter_01/models/did.dart';
-import 'package:bt_wallet_flutter_01/models/tx_status.dart';
-import 'package:bt_wallet_flutter_01/views/tx_list/utils/date.dart';
+import 'package:bt_wallet/common/theme/font.dart';
+import 'package:bt_wallet/models/amount.dart';
+import 'package:bt_wallet/models/did.dart';
+import 'package:bt_wallet/models/tx_status.dart';
+import 'package:bt_wallet/views/tx_list/utils/date.dart';
 import 'package:web3dart/credentials.dart';
 
 import 'color_money_text.dart';

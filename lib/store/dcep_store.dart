@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 import 'package:web3dart/web3dart.dart';
 
-import 'package:bt_wallet_flutter_01/models/dcep/dcep.dart';
-import 'package:bt_wallet_flutter_01/service/api_provider.dart';
-import 'package:bt_wallet_flutter_01/service/contract_service.dart';
-import 'package:bt_wallet_flutter_01/store/identity_store.dart';
+import 'package:bt_wallet/models/dcep/dcep.dart';
+import 'package:bt_wallet/service/api_provider.dart';
+import 'package:bt_wallet/service/contract_service.dart';
+import 'package:bt_wallet/store/identity_store.dart';
 
 const dcepPrefix = 'dcep';
 

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:bt_wallet_flutter_01/common/theme/font.dart';
-import 'package:bt_wallet_flutter_01/common/theme/index.dart';
-import 'package:bt_wallet_flutter_01/store/identity_store.dart';
-import 'package:bt_wallet_flutter_01/views/home/home.dart';
-import 'package:bt_wallet_flutter_01/views/home/home_store.dart';
+import 'package:bt_wallet/common/theme/font.dart';
+import 'package:bt_wallet/common/theme/index.dart';
+import 'package:bt_wallet/store/identity_store.dart';
+import 'package:bt_wallet/views/home/home.dart';
+import 'package:bt_wallet/views/home/home_store.dart';
 
 void showDialogIfNoIdentity(BuildContext context, HomeStore homeStore) {
   final IdentityStore _identityStore = Get.find();

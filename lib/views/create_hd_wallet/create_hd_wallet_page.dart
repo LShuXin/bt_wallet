@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/font.dart';
-import 'package:bt_wallet_flutter_01/router/routers.dart';
-import 'package:bt_wallet_flutter_01/store/mnemonics.dart';
-import 'package:bt_wallet_flutter_01/views/create_hd_wallet/widgets/tips.dart';
-import 'package:bt_wallet_flutter_01/widgets/hint_dialog.dart';
-import 'package:bt_wallet_flutter_01/widgets/layouts/common_layout.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/font.dart';
+import 'package:bt_wallet/router/routers.dart';
+import 'package:bt_wallet/store/mnemonics.dart';
+import 'package:bt_wallet/views/create_hd_wallet/widgets/tips.dart';
+import 'package:bt_wallet/widgets/hint_dialog.dart';
+import 'package:bt_wallet/widgets/layouts/common_layout.dart';
 
 
 class CreateHDWalletPage extends StatefulWidget {

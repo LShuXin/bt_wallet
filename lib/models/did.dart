@@ -1,4 +1,4 @@
-import 'package:bt_wallet_flutter_01/common/application.dart';
+import 'package:bt_wallet/common/application.dart';
 import 'package:web3dart/credentials.dart';
 
 class DID {

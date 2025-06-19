@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/font.dart';
-import 'package:bt_wallet_flutter_01/models/amount.dart';
-import 'package:bt_wallet_flutter_01/models/tx_status.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/font.dart';
+import 'package:bt_wallet/models/amount.dart';
+import 'package:bt_wallet/models/tx_status.dart';
 
 class ColorMoneyText extends StatelessWidget {
   final Amount amount;

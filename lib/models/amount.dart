@@ -1,8 +1,8 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/serializer.dart';
 import 'package:decimal/decimal.dart';
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/common/util/format.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/common/util/format.dart';
 
 class Amount {
   const Amount(this.value);

@@ -7,11 +7,11 @@ import 'package:optional/optional_internal.dart';
 import 'package:tuple/tuple.dart';
 import 'package:uuid/uuid.dart';
 
-import 'package:bt_wallet_flutter_01/models/amount.dart';
-import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
-import 'package:bt_wallet_flutter_01/models/tw_balance.dart';
-import 'package:bt_wallet_flutter_01/service/contract_service.dart';
-import 'package:bt_wallet_flutter_01/store/mnemonics.dart';
+import 'package:bt_wallet/models/amount.dart';
+import 'package:bt_wallet/models/identity/decentralized_identity.dart';
+import 'package:bt_wallet/models/tw_balance.dart';
+import 'package:bt_wallet/service/contract_service.dart';
+import 'package:bt_wallet/store/mnemonics.dart';
 
 part 'identity_store.g.dart';
 

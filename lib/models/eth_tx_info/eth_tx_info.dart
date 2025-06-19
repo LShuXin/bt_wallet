@@ -7,7 +7,7 @@ import 'package:web3dart/crypto.dart';
 // ignore: implementation_imports
 import 'package:web3dart/src/utils/rlp.dart' as rlp;
 
-import 'package:bt_wallet_flutter_01/common/application.dart';
+import 'package:bt_wallet/common/application.dart';
 
 part 'eth_tx_info.g.dart';
 

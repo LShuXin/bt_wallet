@@ -4,25 +4,25 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:get/get.dart';
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/common/dapp_list.dart';
-import 'package:bt_wallet_flutter_01/common/secure_storage.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/font.dart';
-import 'package:bt_wallet_flutter_01/router/routers.dart';
-import 'package:bt_wallet_flutter_01/common/util/progress_dialog.dart';
-import 'package:bt_wallet_flutter_01/store/dcep_store.dart';
-import 'package:bt_wallet_flutter_01/store/identity_store.dart';
-import 'package:bt_wallet_flutter_01/views/create_hd_wallet/widgets/tips.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/home.dart';
-import 'package:bt_wallet_flutter_01/views/home/home_store.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/common/dapp_list.dart';
+import 'package:bt_wallet/common/secure_storage.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/font.dart';
+import 'package:bt_wallet/router/routers.dart';
+import 'package:bt_wallet/common/util/progress_dialog.dart';
+import 'package:bt_wallet/store/dcep_store.dart';
+import 'package:bt_wallet/store/identity_store.dart';
+import 'package:bt_wallet/views/create_hd_wallet/widgets/tips.dart';
+import 'package:bt_wallet/views/ble_payment/home.dart';
+import 'package:bt_wallet/views/home/home_store.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 
 import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'package:bt_wallet_flutter_01/models/identity/decentralized_identity.dart';
+import 'package:bt_wallet/models/identity/decentralized_identity.dart';
 
 Future<void> _cleanPrivateData(BuildContext context) async {
   final ProgressDialog _dialog = Get.find();

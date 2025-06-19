@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bt_wallet_flutter_01/models/contract.dart';
+import 'package:bt_wallet/models/contract.dart';
 
 void main() {
   group('Contract', () {

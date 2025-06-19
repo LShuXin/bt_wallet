@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:bt_wallet_flutter_01/common/device_info.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/index.dart';
-import 'package:bt_wallet_flutter_01/widgets/error_row.dart';
-import 'package:bt_wallet_flutter_01/widgets/page_title.dart';
+import 'package:bt_wallet/common/device_info.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/index.dart';
+import 'package:bt_wallet/widgets/error_row.dart';
+import 'package:bt_wallet/widgets/page_title.dart';
 
 typedef BeforeDispose = Future<void> Function();
 

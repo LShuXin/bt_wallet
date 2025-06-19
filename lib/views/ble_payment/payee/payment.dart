@@ -3,14 +3,14 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 // import 'package:flutter_blue/flutter_blue.dart';
 import 'package:get/get.dart';
-import 'package:bt_wallet_flutter_01/ble/ble_periphery.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/index.dart';
-import 'package:bt_wallet_flutter_01/models/offline_tx/offline_tx.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/common/bluetooth_off.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/common/tx_store.dart';
-import 'package:bt_wallet_flutter_01/views/ble_payment/payee/session.dart';
-import 'package:bt_wallet_flutter_01/widgets/layouts/common_layout.dart';
+import 'package:bt_wallet/ble/ble_periphery.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/index.dart';
+import 'package:bt_wallet/models/offline_tx/offline_tx.dart';
+import 'package:bt_wallet/views/ble_payment/common/bluetooth_off.dart';
+import 'package:bt_wallet/views/ble_payment/common/tx_store.dart';
+import 'package:bt_wallet/views/ble_payment/payee/session.dart';
+import 'package:bt_wallet/widgets/layouts/common_layout.dart';
 
 class PaymentScreen extends StatefulWidget {
   final int amount;

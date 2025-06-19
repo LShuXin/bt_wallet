@@ -4,9 +4,9 @@ import 'package:dio/dio.dart';
 import 'package:get/get.dart' as g;
 import 'package:optional/optional.dart';
 
-import 'package:bt_wallet_flutter_01/common/application.dart';
-import 'package:bt_wallet_flutter_01/common/http/loading_interceptor.dart';
-import 'package:bt_wallet_flutter_01/widgets/hint_dialog.dart';
+import 'package:bt_wallet/common/application.dart';
+import 'package:bt_wallet/common/http/loading_interceptor.dart';
+import 'package:bt_wallet/widgets/hint_dialog.dart';
 
 void showErrorDialog(DioException err) {
   String errorMessage = '未知错误';

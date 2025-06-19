@@ -1,8 +1,8 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:bt_wallet_flutter_01/models/serializer.dart';
-import 'package:bt_wallet_flutter_01/models/vc_type_response.dart';
+import 'package:bt_wallet/models/serializer.dart';
+import 'package:bt_wallet/models/vc_type_response.dart';
 
 part 'issuer_response.g.dart';
 

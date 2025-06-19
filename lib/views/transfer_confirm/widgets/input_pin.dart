@@ -6,14 +6,14 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:optional/optional.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:bt_wallet_flutter_01/common/secure_storage.dart';
-import 'package:bt_wallet_flutter_01/common/theme/color.dart';
-import 'package:bt_wallet_flutter_01/common/theme/font.dart';
-import 'package:bt_wallet_flutter_01/common/theme/index.dart';
-import 'package:bt_wallet_flutter_01/models/webview/pincode_dialog/pincode_dialog_error_msg.dart';
-import 'package:bt_wallet_flutter_01/models/webview/pincode_dialog/pincode_dialog_input.dart';
-import 'package:bt_wallet_flutter_01/service/pin_code_service.dart';
-import 'package:bt_wallet_flutter_01/widgets/error_row.dart';
+import 'package:bt_wallet/common/secure_storage.dart';
+import 'package:bt_wallet/common/theme/color.dart';
+import 'package:bt_wallet/common/theme/font.dart';
+import 'package:bt_wallet/common/theme/index.dart';
+import 'package:bt_wallet/models/webview/pincode_dialog/pincode_dialog_error_msg.dart';
+import 'package:bt_wallet/models/webview/pincode_dialog/pincode_dialog_input.dart';
+import 'package:bt_wallet/service/pin_code_service.dart';
+import 'package:bt_wallet/widgets/error_row.dart';
 
 class InputPinWidget extends StatefulWidget {
   final bool autoValidate;
