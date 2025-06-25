@@ -1,27 +1,25 @@
-import 'package:bt_wallet/views/restore_hd_wallet/restore_hd_wallet.dart';
-import 'package:bt_wallet/views/splash_screen/splash_screen_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:fluro/fluro.dart';
 import 'package:optional/optional_internal.dart';
 
-import 'package:bt_wallet/views/create_hd_wallet/create_hd_wallet_page.dart';
-import 'package:bt_wallet/views/confirm_hd_wallet/confirm_hd_wallet.dart';
-import 'package:bt_wallet/views/dapp/dapp.dart';
-import 'package:bt_wallet/views/home/my/chat.dart';
-import 'package:bt_wallet/views/home/home.dart';
-import 'package:bt_wallet/views/home/identity/identity_new_page.dart';
-import 'package:bt_wallet/views/home/my/message_page.dart';
-import 'package:bt_wallet/views/identity_qr/identity_qr_code.dart';
-import 'package:bt_wallet/views/input_pin/input_pin_page.dart';
-import 'package:bt_wallet/views/wallet_entry/wallet_entry_page.dart';
-import 'package:bt_wallet/views/profile/profile.dart';
-import 'package:bt_wallet/views/qr_scanner/qr_scanner.dart';
-import 'package:bt_wallet/views/restore_hd_wallet/restore_hd_wallet.dart';
-import 'package:bt_wallet/views/transfer/transfer.dart';
-import 'package:bt_wallet/views/transfer_confirm/transfer_confirm.dart';
-import 'package:bt_wallet/views/tx_list/tx_list_details_page.dart';
-import 'package:bt_wallet/views/tx_list/tx_list_page.dart';
+import 'package:bt_wallet/modules/create_hd_wallet/pages/create_hd_wallet_page.dart';
+import 'package:bt_wallet/modules/confirm_hd_wallet/pages/confirm_hd_wallet.dart';
+import 'package:bt_wallet/modules/dapp/pages/dapp_page.dart';
+import 'package:bt_wallet/modules/home/home/pages/home_page.dart';
+import 'package:bt_wallet/modules/home/identity/pages/identity_new_page.dart';
+import 'package:bt_wallet/modules/home/mine/pages/message_page.dart';
+import 'package:bt_wallet/modules/identity_qr/pages/identity_qr_code.dart';
+import 'package:bt_wallet/modules/input_pin/pages/input_pin_page.dart';
+import 'package:bt_wallet/modules/profile/pages/profile_page.dart';
+import 'package:bt_wallet/modules/qr_scanner/pages/qr_scanner_page.dart';
+import 'package:bt_wallet/modules/restore_hd_wallet/pages/restore_hd_wallet_page.dart';
+import 'package:bt_wallet/modules/splash_screen/pages/splash_screen_page.dart';
+import 'package:bt_wallet/modules/transfer/pages/transfer_page.dart';
+import 'package:bt_wallet/modules/transfer/pages/transfer_confirm_page.dart';
+import 'package:bt_wallet/modules/tx_list/pages/tx_list_details_page.dart';
+import 'package:bt_wallet/modules/tx_list/pages/tx_list_page.dart';
+import 'package:bt_wallet/modules/wallet_entry/pages/wallet_entry_page.dart';
 
 Handler splashScreenPageHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {

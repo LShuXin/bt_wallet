@@ -1,21 +1,21 @@
 import 'dart:async';
 
-import 'package:bt_wallet/common/getx.dart';
-import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+
+import 'package:fluro/fluro.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:sentry/sentry.dart';
 
+import 'package:bt_wallet/common/getx.dart';
 import 'package:bt_wallet/common/application.dart';
 import 'package:bt_wallet/common/theme/color.dart';
 import 'package:bt_wallet/common/theme/font.dart';
 import 'package:bt_wallet/router/routers.dart';
-import 'package:bt_wallet/views/splash_screen/splash_screen_page.dart';
 
 // native crash support
-final SentryClient sentry = SentryClient(SentryOptions(dsn: 'https://cbc45c2b4f0f400797ca489f4f117699@o402661.ingest.sentry.io/5264109'));
+final SentryClient sentry = SentryClient(SentryOptions(dsn: 'https://xxx'));
 
 bool get isInDebugMode {
   bool inDebugMode = false;
@@ -30,30 +30,27 @@ Future<Future<SentryId>> _reportError(dynamic error, dynamic stackTrace) async {
   );
 }
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  Application.appName = (await PackageInfo.fromPlatform()).appName;
-  await initGlobalDependencies();
-  FlutterError.onError = (FlutterErrorDetails details) async {
-    if (isInDebugMode) {
-      FlutterError.dumpErrorToConsole(details);
-    } else {
-      await _reportError(details.exception, details.stack);
-    }
-  };
-
-  runApp(TWallet());
-
-  // runZonedGuarded(
-  //   () => runApp(TWallet()),
-  //   (error, stackTrace) async {
-  //     await _reportError(error, stackTrace);
-  //   },
-  // );
+void main()  {
+  runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    Application.appName = (await PackageInfo.fromPlatform()).appName;
+    await initGlobalDependencies();
+    FlutterError.onError = (FlutterErrorDetails details) async {
+      if (isInDebugMode) {
+        FlutterError.dumpErrorToConsole(details);
+      } else {
+        await _reportError(details.exception, details.stack);
+      }
+    };
+    runApp(BTWallet());
+  }, (error, stackTrace) async {
+      await _reportError(error, stackTrace);
+    },
+  );
 }
 
-class TWallet extends StatelessWidget {
-  TWallet({super.key}) {
+class BTWallet extends StatelessWidget {
+  BTWallet({super.key}) {
     final router = FluroRouter();
     Routes.configureRoutes(router);
     Application.router = router;

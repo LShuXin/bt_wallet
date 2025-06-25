@@ -1,12 +1,11 @@
+import 'package:flutter/services.dart';
+
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:flutter/services.dart';
 
 part 'ble_periphery.g.dart';
 
-// BLE：蓝牙低功耗
-// Peripheral：外围设备
 class BleCentralState extends EnumClass {
   static Serializer<BleCentralState> get serializer =>
     _$bleCentralStateSerializer;

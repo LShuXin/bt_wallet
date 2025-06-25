@@ -7,7 +7,7 @@ import 'package:bt_wallet/common/theme/font.dart';
 import 'package:bt_wallet/common/theme/index.dart';
 import 'package:bt_wallet/models/webview/pincode_dialog/pincode_dialog_style.dart';
 import 'package:bt_wallet/service/pin_code_service.dart';
-import 'package:bt_wallet/views/transfer_confirm/widgets/input_pin.dart';
+import 'package:bt_wallet/modules/transfer/widgets/input_pin.dart';
 
 class PinDialogWidget extends StatelessWidget {
   final Completer completer;

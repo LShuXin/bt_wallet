@@ -31,7 +31,7 @@ import 'package:bt_wallet/models/webview/sign_transaction/sign_transaction.dart'
 import 'package:bt_wallet/models/webview/sign_transaction/transaction_info.dart';
 import 'package:bt_wallet/models/webview/webview_request.dart';
 import 'package:bt_wallet/models/webview/webview_request_method.dart';
-import 'package:bt_wallet/views/ble_payment/common/command.dart';
+import 'package:bt_wallet/modules/ble_payment/common/command.dart';
 
 part 'serializer.g.dart';
 

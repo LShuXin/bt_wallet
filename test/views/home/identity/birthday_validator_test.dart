@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/intl.dart';
-import 'package:bt_wallet/views/home/identity/date_validator.dart';
+import 'package:bt_wallet/modules/home/home/helper.dart';
 
 void main() {
   final formats = {

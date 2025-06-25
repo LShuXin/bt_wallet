@@ -32,7 +32,7 @@ import 'package:bt_wallet/service/api_provider.dart';
 import 'package:bt_wallet/service/pin_code_service.dart';
 import 'package:bt_wallet/store/identity_store.dart';
 import 'package:bt_wallet/store/mnemonics.dart';
-import 'package:bt_wallet/views/dapp/dapp.dart';
+import 'package:bt_wallet/modules/dapp/pages/dapp_page.dart';
 
 typedef OperatorFunction = void Function(String id, String param);
 

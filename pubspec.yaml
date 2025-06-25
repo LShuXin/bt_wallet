@@ -36,29 +36,29 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: any
+  cupertino_icons: 1.0.8
   flutter_chat_types: any
-  firebase_auth: any
-  cloud_firestore: any
-  json_annotation: any
-  flutter_mobx: any
+  firebase_auth: 5.0.0
+  cloud_firestore: 5.6.8
+  json_annotation: 4.9.0
+  flutter_mobx: 2.3.0
   flutter_secure_storage: 9.2.4
-  mobx: any
-  pin_code_fields: any
-  random_string: any
-  encrypt: any
-  fluro: any
-  decimal: any
-  dio: any
-  bip32: any
-  bip39: any
-  ethereum_addresses: any
-  validators: any
-  cached_network_image: any
-  optional: any
-  json_store: any
-  more: any
-  uuid: any
+  mobx: 2.5.0
+  pin_code_fields: 8.0.1
+  random_string: 2.3.1
+  encrypt: 5.0.3
+  fluro: 2.0.5
+  decimal: 3.2.1
+  dio: 5.8.0+1
+  bip32: 2.0.0
+  bip39: 1.0.6
+  ethereum_addresses: 1.0.2
+  validators: 3.0.0
+  cached_network_image: 3.3.1
+  optional: 6.1.0+1
+  json_store: 2.0.2
+  more: 4.4.0
+  uuid: 4.5.1
   date_format: any
   web3dart: any
   http: any
@@ -67,68 +67,78 @@ dependencies:
   built_collection: any
   mockito: any
   flutter_custom_dialog:
-    path: plugins/flutter-custom-dialog
+    git:
+      url: https://github.com/LShuXin/flutter_plugins.git
+      path: flutter-custom-dialog
   qr_flutter: any
   ai_barcode:
-    path: plugins/ai_barcode
+    git:
+      url: https://github.com/LShuXin/flutter_plugins.git
+      path: ai_barcode
   permission_handler:
     git:
       url: https://github.com/LShuXin/flutter_plugins.git
       path: flutter_permission_handler/permission_handler
-  another_flushbar: any
-  flutter_svg: any
-  flutter_screenutil: any
-  custom_radio_grouped_button: any
-  convert: any
-  package_info_plus: any
-  device_info_plus: any
-  get: any
-  intl: any
+  another_flushbar: 1.12.30
+  flutter_svg: 2.1.0
+  flutter_screenutil: 5.9.3
+  custom_radio_grouped_button: 2.2.1
+  convert: 3.1.2
+  package_info_plus: 8.3.0
+  device_info_plus: 11.3.0
+  get: 4.7.2
+  intl: 0.20.2
   webview_flutter:
     git:
       url: https://github.com/LShuXin/flutter_plugins.git
       path: webview_flutter/webview_flutter
-  sentry: any
-  crypto: any
-  flutter_native_splash: any
-  corsac_jwt: any
+  sentry: 8.14.2
+  crypto: 3.0.6
+  flutter_native_splash: 2.4.4
+  corsac_jwt: 2.0.1
   path_provider:
     git:
       url: https://github.com/LShuXin/flutter_plugins.git
       path: path_provider/path_provider
   flutter_webview_plugin:
-    path: plugins/flutter_webview_plugin
-  collection: any
+    git:
+      url: https://github.com/LShuXin/flutter_plugins.git
+      path: flutter_webview_plugin
+  collection: 1.19.0
   flutter_ble_lib_ios_15:
-    path: plugins/flutter_ble_lib_ios_15
-  flutter_ble_peripheral: any
-  crypton: any
-  search_choices: any
-  connectivity_plus: any
-  quick_log: any
+    git:
+      url: https://github.com/LShuXin/flutter_plugins.git
+      path: flutter_ble_lib_ios_15
+  flutter_ble_peripheral: 1.2.6
+  crypton: 2.2.1
+  search_choices: 2.3.1
+  connectivity_plus: 6.1.4
+  quick_log: 5.5.3
 #  flutter_blue:
-#    path: plugins/flutter_blue
-  duration: any
-  rational: any
-  flutter_chat_ui: any
-  firebase_core: any
-  flutter_firebase_chat_core: any
-  firebase_analytics: any
-  tuple: any
+#    git:
+#      url: https://github.com/LShuXin/flutter_plugins.git
+#      path: flutter_blue
+  duration: 4.0.3
+  rational: 2.2.3
+  flutter_chat_ui: 1.6.15
+  firebase_core: 3.13.1
+  flutter_firebase_chat_core: 1.6.8
+  firebase_analytics: 11.4.6
+  tuple: 2.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: any
-  mobx_codegen: any
-  json_serializable: any
-  lint: any
+  build_runner: 2.4.15
+  mobx_codegen: 2.7.1
+  json_serializable: 6.9.5
+  lint: 2.7.0
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: any
+  flutter_lints: 5.0.0
 
 dependency_overrides:
   path_provider:
@@ -138,7 +148,7 @@ dependency_overrides:
   analyzer: ^6.2.0
 
 # For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
+# following pages: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -150,11 +160,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/
+    - assets/abi/
+    - assets/dummy_data/
+    - assets/fonts/
     - assets/icons/
     - assets/icons/bottom_bar/
     - assets/icons/dapp/
-    - assets/dummy_data/
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

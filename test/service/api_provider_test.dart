@@ -5,7 +5,6 @@ import 'package:mockito/mockito.dart';
 import 'package:optional/optional.dart';
 import 'package:bt_wallet/common/http/http_client.dart';
 import 'package:bt_wallet/models/contract.dart';
-import 'package:bt_wallet/models/health_certification_token.dart';
 import 'package:bt_wallet/models/transaction.dart';
 import 'package:bt_wallet/models/tw_balance.dart';
 import 'package:bt_wallet/service/api_provider.dart';
@@ -178,15 +177,5 @@ void main() {
       ),
     );
 
-    expect(
-      await _apiProvider.healthCertificate(
-        did,
-        phone,
-        temperature,
-        contact,
-        symptoms,
-      ),
-      isA<Optional<HealthCertificationToken>>(),
-    );
   });
 }

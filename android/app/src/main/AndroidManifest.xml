@@ -13,7 +13,7 @@
         android:required="false" />
 
     <application
-        android:label="bt_wallet"
+        android:label="BTWallet"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
