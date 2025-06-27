@@ -1,4 +1,4 @@
-package pro.upchain.wallet;
+package com.lsx.bt_wallet;
 
 import org.junit.Test;
 

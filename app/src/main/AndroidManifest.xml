@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.lsx.bt_wallet_android_01">
+    package="com.lsx.bt_wallet">
 
     <uses-sdk tools:overrideLibrary="cn.bingoogolapple.photopicker"> </uses-sdk>
 
@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        android:name="pro.upchain.wallet.UpChainWalletApp"
+        android:name="com.lsx.bt_wallet.UpChainWalletApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -26,7 +26,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         >
         <activity
-            android:name="pro.upchain.wallet.ui.activity.SplashActivity"
+            android:name="com.lsx.bt_wallet.ui.activity.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -36,41 +36,41 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="pro.upchain.wallet.ui.activity.GuideActivity"
+            android:name="com.lsx.bt_wallet.ui.activity.GuideActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="pro.upchain.wallet.ui.activity.MainActivity"
+            android:name="com.lsx.bt_wallet.ui.activity.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"></activity>
 
-        <activity android:name="pro.upchain.wallet.ui.activity.QRCodeScannerActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.QRCodeScannerActivity" />
 
-        <activity android:name="pro.upchain.wallet.ui.activity.CreateWalletActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.AddTokenActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.AddCustomTokenActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.GatheringQRCodeActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.ContactsActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.SendActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.PropertyDetailActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.WalletMangerActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.MessageCenterActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.SystemSettingActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.LanguageSettingActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.CurrencyUnitSettingActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.Web3SettingActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.NetSettingActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.TransactionsActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.SwitchWalletActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.WalletBackupActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.MnemonicBackupActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.VerifyMnemonicBackupActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.ImportWalletActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.WalletDetailActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.ModifyPasswordActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.ExportKeystoreActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.HelpActivity" />
-        <activity android:name="pro.upchain.wallet.ui.activity.TransactionDetailActivity"></activity>
-        <activity android:name="pro.upchain.wallet.ui.activity.ConfirmationActivity"></activity>
+        <activity android:name="com.lsx.bt_wallet.ui.activity.CreateWalletActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.AddTokenActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.AddCustomTokenActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.GatheringQRCodeActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.ContactsActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.SendActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.PropertyDetailActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.WalletMangerActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.MessageCenterActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.SystemSettingActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.LanguageSettingActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.CurrencyUnitSettingActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.Web3SettingActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.NetSettingActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.TransactionsActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.SwitchWalletActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.WalletBackupActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.MnemonicBackupActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.VerifyMnemonicBackupActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.ImportWalletActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.WalletDetailActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.ModifyPasswordActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.ExportKeystoreActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.HelpActivity" />
+        <activity android:name="com.lsx.bt_wallet.ui.activity.TransactionDetailActivity"></activity>
+        <activity android:name="com.lsx.bt_wallet.ui.activity.ConfirmationActivity"></activity>
     </application>
 
 </manifest>

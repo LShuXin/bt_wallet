@@ -1,24 +1,30 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
-    ext.kotlin_version = "1.6.0"
+    ext.kotlin_version = "1.9.22"
 
     repositories {
         google()
         mavenCentral()
     }
+
     dependencies {
         classpath 'com.android.tools.build:gradle:8.5.0'
-        classpath "io.realm:realm-gradle-plugin:10.15.1"
-        classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.3'
+
+        // ❌ Realm 插件不支持 Gradle 8.7，建议移除或迁移到 Realm Kotlin SDK
+//         classpath "io.realm:realm-gradle-plugin:10.15.1"
+
+        // ❌ 不推荐使用 butterknife，可保留
+//        classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.3'
+
+        // ✅ GreenDAO 插件 3.3.0 可兼容 Gradle 8
         classpath 'org.greenrobot:greendao-gradle-plugin:3.3.0'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+
+        // ❌ 移除已废弃 maven 插件，改为 maven-publish 插件在 module 中使用
+        // classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+
     }
 }
-
 
 allprojects {
     repositories {
@@ -37,7 +43,6 @@ allprojects {
     }
 }
 
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
@@ -45,3 +50,5 @@ task clean(type: Delete) {
 ext {
     supportVersion = '30.0.2'
 }
+
+

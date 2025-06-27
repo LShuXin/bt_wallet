@@ -1,4 +1,4 @@
-package pro.upchain.wallet;
+package com.lsx.bt_wallet;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,18 +1,20 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'realm-android'
-apply plugin: 'org.greenrobot.greendao' // apply plugin
-//apply plugin: 'com.android.library'
-apply plugin: 'com.jakewharton.butterknife'
+//apply plugin: 'realm-android'
+//apply plugin: 'org.greenrobot.greendao'
+//apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 31
     buildToolsVersion '30.0.2'
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
-        applicationId "com.lsx.bt_wallet_android_01"
+        applicationId "com.lsx.bt_wallet"
         minSdkVersion 29
         //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 31
@@ -97,7 +99,7 @@ dependencies {
 //    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     implementation "com.jakewharton:butterknife:10.2.3"
-    annotationProcessor "com.jakewharton:butterknife-compiler:10.2.3"
+//    annotationProcessor "com.jakewharton:butterknife-compiler:10.2.3"
 
     // leakcanary 可以迅速定位内存泄漏
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
@@ -162,13 +164,15 @@ dependencies {
     implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.3.6'
 
     implementation 'pub.devrel:easypermissions:1.0.1'
+    implementation 'com.geyifeng.immersionbar:immersionbar:3.2.2'
+    implementation 'com.geyifeng.immersionbar:immersionbar-ktx:3.2.2'
     api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
 }
 
-greendao {
-    schemaVersion 1
-}
+//greendao {
+//    schemaVersion 1
+//}
 repositories {
     mavenCentral()
 }
